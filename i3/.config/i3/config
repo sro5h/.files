@@ -196,3 +196,4 @@ bar {
 # execs
 exec --no-startup-id $cmd_touchpad_disable
 exec --no-startup-id $cmd_xrandr
+exec --no-startup-id nm-applet
