@@ -51,7 +51,7 @@ let g:oblique#incsearch_highlight_all=1
 "===============================================
 " vim settings
 "===============================================
-"set t_Co=16
+set t_Co=16
 set background=dark
 set encoding=utf8 " set file encoding to utf-8
 set noautochdir " prevent vim from changing the pwd
