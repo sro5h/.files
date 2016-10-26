@@ -12,3 +12,6 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push'
+
+# stow
+alias stowh='stow -t ~'
