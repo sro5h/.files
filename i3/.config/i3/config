@@ -141,6 +141,7 @@ bindsym $mod+r mode "resize"
 set $cmd_touchpad_enable xinput set-prop 11 "Device Enabled" 1
 set $cmd_touchpad_disable  xinput set-prop 11 "Device Enabled" 0
 set $cmd_xrandr xrandr --dpi 128
+set $cmd_feh_bg feh --bg-scale
 
 # mode touchpad
 set $mode_touchpad "touchpad"
@@ -200,3 +201,4 @@ bar {
 exec --no-startup-id $cmd_touchpad_disable
 exec --no-startup-id $cmd_xrandr
 exec --no-startup-id nm-applet
+exec_always --no-startup-id $cmd_feh_bg $HOME/Pictures/wallpaper.jpg
