@@ -5,11 +5,12 @@ set nocompatible
 "===============================================
 call plug#begin('~/.vim/plugins')
 "
-Plug 'altercation/vim-colors-solarized'
+Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'ajh17/VimCompletesMe'
+Plug 'skywind3000/asyncrun.vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'marcweber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate' | Plug 'sro5h/snippets'
 Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/filestyle'
@@ -22,27 +23,29 @@ call plug#end()
 " plugin settings
 "===============================================
 "
+" netrw
+"-----------------------------------------------
+let g:netrw_liststyle=0
+"
 " airline
 "-----------------------------------------------
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#tab_min_count=1
-let g:airline_theme='solarized'
+let g:airline_theme='deep_space'
 let g:airline_powerline_fonts=1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-"
-" nerdtree
-"-----------------------------------------------
-let g:nerdtree_tabs_open_on_gui_startup=0
-let g:nerdtree_tabs_open_on_console_startup=0
-let g:NERDTreeWinSize=30
-let g:NERDTreeShowHidden=1
+let g:airline_left_sep='>'
+let g:airline_right_sep='<'
 "
 " ctrlp
 "-----------------------------------------------
 let g:ctrlp_show_hidden=1
 let g:ctrlp_root_markers=['.git', '.vimprj', 'premake5.lua']
+"
+" vim completes me
+"-----------------------------------------------
+let g:vcm_direction='n'
+let g:vcm_default_maps=0
 "
 " vim-oblique
 "-----------------------------------------------
@@ -59,7 +62,7 @@ set nobackup " disable auto backup
 set noswapfile " disable swap files
 set updatetime=250 " lower update time
 " editor
-colorscheme solarized
+colorscheme deep-space
 set number
 set relativenumber
 set ruler " show line number & column
@@ -89,8 +92,13 @@ if has("gui_running")
     set guioptions-=T " disable toolbar in vim gui
     set guioptions-=L " disable left scrollbar
     set guioptions-=r " disable right scrollbar
-    "set lines =50 columns=120 " initial size of vim (gui)
+    " set lines =50 columns=120 " initial size of vim (gui)
     set lines=999 columns=999 " maximize gvim window
+    set guifont=Consolas:h10
+    " disable bells
+    augroup guicommands
+        autocmd GUIEnter * set vb t_vb=
+    augroup END
 "else
     " this is console Vim.
     "if exists("+lines")
@@ -118,9 +126,7 @@ inoremap <Down> <nop>
 inoremap <Up> <nop>
 "nnoremap - ddp
 " autocomplete mapping
-inoremap <C-c> <C-x><C-u>
-"nnoremap <C-r> :call NERDTreeRefresh()<cr>
-nnoremap <leader>n :NERDTreeToggle<cr>
+imap <Tab> <plug>vim_completes_me_backward
 " leader mappings
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
@@ -140,6 +146,7 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
+nnoremap <leader>v :e $MYVIMRC<cr>
 "
 " operators
 "-----------------------------------------------
@@ -161,10 +168,12 @@ onoremap il< :<c-u>normal! F>vi<<cr>
 "-----------------------------------------------
 augroup commands
     autocmd!
-    au VimEnter * echo "d[ o_0 ]b"
+    autocmd VimEnter * echo "d[ o_0 ]b"
     "au VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
     "au InsertEnter,InsertLeave * set cursorline!
-    au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    " source vimrc after save
+    autocmd bufwritepost .vimrc source $MYVIMRC
     "au BufRead *.vimprj call LoadProject() Make project plugin that sources loaded project files
 augroup END
 
