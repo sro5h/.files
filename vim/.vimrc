@@ -42,6 +42,11 @@ let g:airline_right_sep='<'
 let g:ctrlp_show_hidden=1
 let g:ctrlp_root_markers=['.git', '.vimprj', 'premake5.lua']
 "
+" vim completes me
+"-----------------------------------------------
+let g:vcm_direction='n'
+let g:vcm_default_maps=0
+"
 " vim-oblique
 "-----------------------------------------------
 let g:oblique#incsearch_highlight_all=1
@@ -121,7 +126,7 @@ inoremap <Down> <nop>
 inoremap <Up> <nop>
 "nnoremap - ddp
 " autocomplete mapping
-inoremap <C-c> <C-x><C-u>
+imap <Tab> <plug>vim_completes_me_backward
 " leader mappings
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
