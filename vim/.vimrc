@@ -11,9 +11,8 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'marcweber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate' | Plug 'sro5h/snippets'
 Plug 'kien/ctrlp.vim'
-Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-scripts/filestyle'
+Plug 'pgdouyon/vim-evanesco'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mhinz/vim-startify'
 "
@@ -33,7 +32,6 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#tab_min_count=1
 let g:airline_theme='deep_space'
-let g:airline_powerline_fonts=1
 let g:airline_left_sep='>'
 let g:airline_right_sep='<'
 "
@@ -45,7 +43,6 @@ let g:ctrlp_root_markers=['.git', '.vimprj', 'premake5.lua']
 " vim completes me
 "-----------------------------------------------
 let g:vcm_direction='n'
-let g:vcm_default_maps=0
 "
 " vim-oblique
 "-----------------------------------------------
@@ -71,7 +68,7 @@ set nowrap
 let mapleader=" "
 set tw=1000 " disable highlighting of long lines
 set scrolloff=1
-set cursorline " highlight the cursorline
+"set cursorline " highlight the cursorline
 set backspace=indent,eol,start " proper deletion with backspace
 set tabstop=4
 set shiftwidth=4
@@ -83,6 +80,11 @@ set splitright
 " zsh esc delay fix
 set timeoutlen=1000 ttimeoutlen=0
 set lazyredraw
+" list chars
+set list
+set listchars=extends:>
+set listchars+=precedes:<
+set listchars+=trail:•
 
 "===============================================
 " gui settings
@@ -125,8 +127,6 @@ inoremap <Right> <nop>
 inoremap <Down> <nop>
 inoremap <Up> <nop>
 "nnoremap - ddp
-" autocomplete mapping
-imap <Tab> <plug>vim_completes_me_backward
 " leader mappings
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
@@ -140,13 +140,14 @@ nnoremap <leader>y :call emmet#expandAbbr(3,"")<cr>
 nnoremap <silent> <leader><CR> :noh<CR>
 nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
-nnoremap <leader>f :FileStyleFix<esc>
+"nnoremap <leader>f :FileStyleFix<esc>
 " more comfortable split navigation
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 nnoremap <leader>v :e $MYVIMRC<cr>
+nnoremap <leader>f :e **/*
 "
 " operators
 "-----------------------------------------------
@@ -173,8 +174,14 @@ augroup commands
     "au InsertEnter,InsertLeave * set cursorline!
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
     " source vimrc after save
-    autocmd bufwritepost .vimrc source $MYVIMRC
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
     "au BufRead *.vimprj call LoadProject() Make project plugin that sources loaded project files
+augroup END
+"
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
 augroup END
 
 "===============================================
