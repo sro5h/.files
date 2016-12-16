@@ -12,7 +12,6 @@ Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'marcweber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate' | Plug 'sro5h/snippets'
 Plug 'kien/ctrlp.vim'
 Plug 'pgdouyon/vim-evanesco'
-"Plug 'jiangmiao/auto-pairs'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mhinz/vim-startify'
 "
@@ -35,14 +34,14 @@ let g:airline_theme='deep_space'
 let g:airline_left_sep='>'
 let g:airline_right_sep='<'
 "
+" deep-space
+"-----------------------------------------------
+let g:deepspace_italics=1
+"
 " ctrlp
 "-----------------------------------------------
 let g:ctrlp_show_hidden=1
 let g:ctrlp_root_markers=['.git', '.vimprj', 'premake5.lua']
-"
-" vim completes me
-"-----------------------------------------------
-let g:vcm_direction='n'
 "
 " vim-oblique
 "-----------------------------------------------
@@ -170,12 +169,7 @@ onoremap il< :<c-u>normal! F>vi<<cr>
 augroup commands
     autocmd!
     autocmd VimEnter * echo "d[ o_0 ]b"
-    "au VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-    "au InsertEnter,InsertLeave * set cursorline!
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-    " source vimrc after save
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-    "au BufRead *.vimprj call LoadProject() Make project plugin that sources loaded project files
 augroup END
 "
 augroup CursorLineOnlyInActiveWindow
