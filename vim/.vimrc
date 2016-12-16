@@ -119,21 +119,14 @@ inoremap <Left> <nop>
 inoremap <Right> <nop>
 inoremap <Down> <nop>
 inoremap <Up> <nop>
-"nnoremap - ddp
 " leader mappings
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
 " add & remove a semicolon to the end of the line if nonexistant
 nnoremap <expr> <leader>s getline('.') =~ ';$' ? '' : "mqA;\<esc>`q"
 nnoremap <expr> <leader>S getline('.') =~ ';$' ? "mq$x\<esc>`q" : ''
-nnoremap <leader>u viwU
-nnoremap <leader>\ :rightbelow vsplit<cr>
-nnoremap <leader>\| :rightbelow split<cr>
-nnoremap <leader>y :call emmet#expandAbbr(3,"")<cr>
-nnoremap <silent> <leader><CR> :noh<CR>
 nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
-"nnoremap <leader>f :FileStyleFix<esc>
 " more comfortable split navigation
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
