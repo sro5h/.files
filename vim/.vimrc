@@ -6,7 +6,7 @@ set nocompatible
 call plug#begin('~/.vim/plugins')
 "
 Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'ajh17/VimCompletesMe'
+Plug 'lifepillar/vim-mucomplete'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'marcweber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate' | Plug 'sro5h/snippets'
@@ -92,7 +92,7 @@ endif
 "===============================================
 " user defined functions
 "===============================================
-
+"
 "===============================================
 " user defined mappings & operators & commands
 "===============================================
