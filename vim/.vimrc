@@ -100,14 +100,8 @@ if has("gui_running")
     augroup guicommands
         autocmd GUIEnter * set vb t_vb=
     augroup END
-"else
+else
     " this is console Vim.
-    "if exists("+lines")
-        "set lines=50
-    "endif
-    "if exists("+columns")
-        "set columns=100
-    "endif
 endif
 
 "===============================================
