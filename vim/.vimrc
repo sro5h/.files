@@ -10,7 +10,6 @@ Plug 'ajh17/VimCompletesMe'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'marcweber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate' | Plug 'sro5h/snippets'
-Plug 'kien/ctrlp.vim'
 Plug 'pgdouyon/vim-evanesco'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mhinz/vim-startify'
@@ -120,8 +119,6 @@ inoremap <Right> <nop>
 inoremap <Down> <nop>
 inoremap <Up> <nop>
 " leader mappings
-nnoremap <leader>p :CtrlP<cr>
-nnoremap <leader>b :CtrlPBuffer<cr>
 " add & remove a semicolon to the end of the line if nonexistant
 nnoremap <expr> <leader>s getline('.') =~ ';$' ? '' : "mqA;\<esc>`q"
 nnoremap <expr> <leader>S getline('.') =~ ';$' ? "mq$x\<esc>`q" : ''
