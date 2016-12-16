@@ -35,11 +35,6 @@ let g:airline_right_sep='<'
 "-----------------------------------------------
 let g:deepspace_italics=1
 "
-" ctrlp
-"-----------------------------------------------
-let g:ctrlp_show_hidden=1
-let g:ctrlp_root_markers=['.git', '.vimprj', 'premake5.lua']
-"
 " vim-oblique
 "-----------------------------------------------
 let g:oblique#incsearch_highlight_all=1
