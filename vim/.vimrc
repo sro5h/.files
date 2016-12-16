@@ -35,9 +35,6 @@ let g:airline_right_sep='<'
 "-----------------------------------------------
 let g:deepspace_italics=1
 "
-" vim-oblique
-"-----------------------------------------------
-let g:oblique#incsearch_highlight_all=1
 
 "===============================================
 " vim settings
