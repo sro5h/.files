@@ -34,8 +34,6 @@ let g:deepspace_italics=1
 "===============================================
 " vim settings
 "===============================================
-set t_Co=16
-set background=dark
 set encoding=utf8 " set file encoding to utf-8
 set noautochdir " prevent vim from changing the pwd
 set nobackup " disable auto backup
@@ -49,7 +47,6 @@ set ruler " show line number & column
 set showcmd
 set nowrap
 let mapleader=" "
-set tw=1000 " disable highlighting of long lines
 set scrolloff=1
 "set cursorline " highlight the cursorline
 set backspace=indent,eol,start " proper deletion with backspace
@@ -85,8 +82,6 @@ if has("gui_running")
         autocmd GUIEnter * set vb t_vb=
     augroup END
 else
-    " this is console Vim.
-endif
 
 "===============================================
 " user defined functions
@@ -96,14 +91,8 @@ endif
 " user defined mappings & operators & commands
 "===============================================
 "
-" mappings
-"-----------------------------------------------
-" disable arrow keys in insert mode
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-inoremap <Down> <nop>
-inoremap <Up> <nop>
 " leader mappings
+"-----------------------------------------------
 " add & remove a semicolon to the end of the line if nonexistant
 nnoremap <expr> <leader>s getline('.') =~ ';$' ? '' : "mqA;\<esc>`q"
 nnoremap <expr> <leader>S getline('.') =~ ';$' ? "mq$x\<esc>`q" : ''
