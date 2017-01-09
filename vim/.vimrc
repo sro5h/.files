@@ -57,9 +57,6 @@ set hlsearch " highlight search results
 set incsearch " enable incremental search
 set splitbelow
 set splitright
-" zsh esc delay fix
-set timeoutlen=1000 ttimeoutlen=0
-set lazyredraw
 " list chars
 set list
 set listchars=extends:>
