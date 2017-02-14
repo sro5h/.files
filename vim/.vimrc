@@ -76,7 +76,6 @@ if has("gui_running")
     set guioptions-=T " disable toolbar in vim gui
     set guioptions-=L " disable left scrollbar
     set guioptions-=r " disable right scrollbar
-    " set lines =50 columns=120 " initial size of vim (gui)
     set lines=999 columns=999 " maximize gvim window
     set guifont=Consolas:h10
     " disable bells
@@ -97,11 +96,6 @@ endif
 "
 " mappings
 "-----------------------------------------------
-" disable arrow keys in insert mode
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-inoremap <Down> <nop>
-inoremap <Up> <nop>
 " leader mappings
 " add & remove a semicolon to the end of the line if nonexistant
 nnoremap <expr> <leader>s getline('.') =~ ';$' ? '' : "mqA;\<esc>`q"
