@@ -77,6 +77,7 @@ if has("gui_running")
         autocmd GUIEnter * set vb t_vb=
     augroup END
 else
+endif
 
 "===============================================
 " user defined functions
