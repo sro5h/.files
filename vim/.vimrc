@@ -100,23 +100,6 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 nnoremap <leader>v :e $MYVIMRC<cr>
-nnoremap <leader>f :e **/*
-"
-" operators
-"-----------------------------------------------
-" in next & in last (has problems with empties)
-onoremap in( :<c-u>normal! f(vi(<cr>
-onoremap il( :<c-u>normal! F)vi(<cr>
-onoremap in{ :<c-u>normal! f{vi{<cr>
-onoremap il{ :<c-u>normal! F}vi{<cr>
-onoremap in" :<c-u>normal! f"vi"<cr>
-onoremap il" :<c-u>normal! F"vi"<cr>
-onoremap in' :<c-u>normal! f'vi'<cr>
-onoremap il' :<c-u>normal! F'vi'<cr>
-onoremap in[ :<c-u>normal! f[vi[<cr>
-onoremap il[ :<c-u>normal! F]vi[<cr>
-onoremap in< :<c-u>normal! f<vi<<cr>
-onoremap il< :<c-u>normal! F>vi<<cr>
 "
 " commands
 "-----------------------------------------------
