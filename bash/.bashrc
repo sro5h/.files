@@ -16,6 +16,7 @@ alias gp='git push'
 alias gd='git diff'
 alias gm='git merge'
 alias gb='git branch'
+alias gt='git tag'
 
 # enable vi like input
 set -o vi
