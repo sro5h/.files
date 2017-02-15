@@ -71,5 +71,5 @@ complete -o bashdefault -o default -o nospace -F _git_push_mine gp
 complete -o bashdefault -o default -o nospace -F _git_merge_mine gm
 
 # ls colors
-LS_COLORS='di=95:fi=0:ln=36:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32:*.rpm=90'
+LS_COLORS='di=34:fi=0:ln=36:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32:*.rpm=90'
 export LS_COLORS
