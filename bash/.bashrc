@@ -1,8 +1,11 @@
-# general aliases
-alias cl='clear'
+#!/usr/bin/env bash
+# ls
 alias l='ls -1 --color -h --group-directories-first'
 alias la='ls -a1 --color -h --group-directories-first'
 alias ll='ls -al --color -h --group-directories-first'
+
+# clear
+alias cl='clear'
 
 # git aliases
 alias gs='git status'
@@ -13,7 +16,6 @@ alias gp='git push'
 alias gd='git diff'
 alias gm='git merge'
 alias gb='git branch'
-
 
 # enable vi like input
 set -o vi
