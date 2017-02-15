@@ -27,12 +27,12 @@ function git_branch() {
     then
         echo " (${BRANCH}) "
     else
-        echo " "
+        echo ""
     fi
 }
 
 # custom prompt ' user > host > branch >'
-export PS1="\n\[\e[30;42m\] \u \[\e[m\]\[\e[32;41m\]>\[\e[m\]\[\e[30;41m\] \h \[\e[m\]\[\e[31;46m\]>\[\e[m\]\[\e[30;46m\]\`git_branch\`\[\e[m\]\[\e[36m\]>\[\e[m\] "
+export PS1="\n\[\e[30;42m\] \u \[\e[m\]\[\e[32;47m\]>\[\e[m\]\[\e[97;47m\] \h \[\e[m\]\[\e[37;100m\]>\[\e[m\]\[\e[96;100m\]\`git_branch\`\[\e[m\]\[\e[90m\]>\[\e[m\] "
 
 # Author.: Ole J
 # Wraps a completion function

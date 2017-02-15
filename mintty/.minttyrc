@@ -63,7 +63,7 @@ Cyan=86, 173, 183
 
 # Light cyan
 # bg=106:fg=96
-BoldCyan=86, 173, 183
+BoldCyan=81, 97, 125
 
 # Light gray
 # bg=47:fg=37
