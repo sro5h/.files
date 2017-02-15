@@ -1,0 +1,74 @@
+BoldAsFont=no
+Transparency=off
+CursorType=block
+Font=Consolas
+FontHeight=9
+Scrollbar=none
+
+BackgroundColour=27, 32, 42
+ForegroundColour=154, 167, 189
+CursorColour=154, 167, 189
+
+# Black
+# bg=40:fg=30
+Black=27, 32, 42
+
+# Dark gray
+# bg=100:fg=90
+BoldBlack=35, 41, 54
+
+# Red
+# bg=41:fg=31
+Red=177, 94, 124
+
+# Light red
+# bg=101:fg=91
+BoldRed=177, 94, 124
+
+# Green
+# bg=42:fg=32
+Green=112, 157, 108
+
+# Light green
+# bg=102:fg=92
+BoldGreen=112, 157, 108
+
+# Yellow
+# bg=43:fg=33
+Yellow=181, 167, 97
+
+# Light yellow
+# bg=103:fg=93
+BoldYellow=181, 167, 97
+
+# Blue
+# bg=44:fg=34
+Blue=96, 140, 195
+
+# Light blue
+# bg=104:fg=94
+BoldBlue=96, 140, 195
+
+# Magenta
+# bg=45:fg=35
+Magenta=143, 114, 191
+
+# Light magenta
+# bg=105:fg=95
+BoldMagenta=143, 114, 191
+
+# Cyan
+# bg=46:fg=36
+Cyan=86, 173, 183
+
+# Light cyan
+# bg=106:fg=96
+BoldCyan=86, 173, 183
+
+# Light gray
+# bg=47:fg=37
+White=50, 60, 77
+
+# White
+# bg=107:fg=97
+BoldWhite=154, 167, 189
