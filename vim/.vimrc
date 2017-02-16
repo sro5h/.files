@@ -50,8 +50,6 @@ set shiftwidth=4
 set expandtab " use spaces instead of tabs
 set hlsearch " highlight search results
 set incsearch " enable incremental search
-set splitbelow
-set splitright
 " list chars
 set list
 set listchars=extends:>
