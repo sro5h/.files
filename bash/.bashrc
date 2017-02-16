@@ -17,6 +17,7 @@ alias gd='git diff'
 alias gm='git merge'
 alias gb='git branch'
 alias gt='git tag'
+alias gl='git log'
 
 # enable vi like input
 set -o vi
