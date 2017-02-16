@@ -44,7 +44,6 @@ set ruler " show line number & column
 set showcmd
 let mapleader=" "
 set scrolloff=1
-"set cursorline " highlight the cursorline
 set backspace=indent,eol,start " proper deletion with backspace
 set tabstop=4
 set shiftwidth=4
