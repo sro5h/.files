@@ -34,7 +34,6 @@ let g:deepspace_italics=1
 " vim settings
 "===============================================
 set encoding=utf8 " set file encoding to utf-8
-set noautochdir " prevent vim from changing the pwd
 set nobackup " disable auto backup
 set noswapfile " disable swap files
 set updatetime=250 " lower update time
