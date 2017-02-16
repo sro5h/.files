@@ -36,7 +36,6 @@ let g:deepspace_italics=1
 set encoding=utf8 " set file encoding to utf-8
 set nobackup " disable auto backup
 set noswapfile " disable swap files
-set updatetime=250 " lower update time
 " editor
 colorscheme deep-space
 set number
