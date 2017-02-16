@@ -55,6 +55,7 @@ set list
 set listchars=extends:>
 set listchars+=precedes:<
 set listchars+=trail:•
+set foldmethod=marker
 
 "===============================================
 " gui settings
@@ -73,15 +74,8 @@ if has("gui_running")
 endif
 
 "===============================================
-" user defined functions
+" user defined mappings
 "===============================================
-"
-"===============================================
-" user defined mappings & operators & commands
-"===============================================
-"
-" mappings
-"-----------------------------------------------
 nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
 " more comfortable split navigation
@@ -89,10 +83,12 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
+" edit vimrc
 nnoremap <leader>v :e $MYVIMRC<cr>
-"
-" commands
-"-----------------------------------------------
+
+"===============================================
+" user defined autocommands
+"===============================================
 augroup commands
     autocmd!
     autocmd VimEnter * echo "d[ o_0 ]b"
@@ -107,5 +103,5 @@ augroup END
 
 "===============================================
 " vim ignore settings
-"==============================================-
+"===============================================
 set wildignore+=*\\bin\\*,*\\build\\*,Makefile
