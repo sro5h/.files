@@ -11,7 +11,7 @@ alias cl='clear'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit -m'
-alias gch='git checkout'
+alias gh='git checkout'
 alias gp='git push'
 alias gd='git diff'
 alias gm='git merge'
@@ -68,7 +68,7 @@ make-completion-wrapper _git _git_push_mine git push
 make-completion-wrapper _git _git_merge_mine git merge
 
 # we tell bash to actually use _git_checkout_mine to complete "gco"
-complete -o bashdefault -o default -o nospace -F _git_checkout_mine gch
+complete -o bashdefault -o default -o nospace -F _git_checkout_mine gh
 complete -o bashdefault -o default -o nospace -F _git_push_mine gp
 complete -o bashdefault -o default -o nospace -F _git_merge_mine gm
 
