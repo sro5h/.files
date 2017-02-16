@@ -82,9 +82,6 @@ endif
 "
 " mappings
 "-----------------------------------------------
-" add & remove a semicolon to the end of the line if nonexistant
-nnoremap <expr> <leader>s getline('.') =~ ';$' ? '' : "mqA;\<esc>`q"
-nnoremap <expr> <leader>S getline('.') =~ ';$' ? "mq$x\<esc>`q" : ''
 nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
 " more comfortable split navigation
