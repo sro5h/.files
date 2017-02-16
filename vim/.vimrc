@@ -42,7 +42,6 @@ set number
 set relativenumber
 set ruler " show line number & column
 set showcmd
-set nowrap
 let mapleader=" "
 set scrolloff=1
 "set cursorline " highlight the cursorline
