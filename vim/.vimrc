@@ -70,7 +70,6 @@ if has("gui_running")
     augroup guicommands
         autocmd GUIEnter * set vb t_vb=
     augroup END
-else
 endif
 
 "===============================================
