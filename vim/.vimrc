@@ -84,7 +84,7 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 " edit vimrc
-nnoremap <leader>v :e $MYVIMRC<cr>
+nnoremap <leader>v :edit $MYVIMRC<cr>
 
 "=============================================================================
 " user defined autocommands
