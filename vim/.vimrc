@@ -83,6 +83,8 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
+" toggle spell
+nnoremap <leader>s :set spell!<cr>
 " edit vimrc
 nnoremap <leader>v :edit $MYVIMRC<cr>
 
