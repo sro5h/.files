@@ -5,7 +5,7 @@ set nocompatible
 "=============================================================================
 call plug#begin('~/.vim/plugins')
 "
-Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'sro5h/vim-deep-space'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'marcweber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate' | Plug 'sro5h/snippets.vim'
 Plug 'pgdouyon/vim-evanesco'
