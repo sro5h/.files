@@ -87,6 +87,7 @@ nnoremap <leader>l <C-w>l
 nnoremap <leader>s :set spell!<cr>
 " edit vimrc
 nnoremap <leader>v :edit $MYVIMRC<cr>
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 
 "=============================================================================
 " user defined autocommands
