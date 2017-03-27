@@ -11,6 +11,7 @@ Plug 'marcweber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-
 Plug 'pgdouyon/vim-evanesco'
 Plug 'sro5h/vim-syntax'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'rust-lang/rust.vim'
 Plug 'mhinz/vim-startify'
 "
 call plug#end()
