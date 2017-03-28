@@ -53,10 +53,7 @@ set hlsearch " highlight search results
 set incsearch " enable incremental search
 " list chars
 set list
-set listchars=extends:>
-set listchars+=precedes:<
-set listchars+=trail:•
-set foldmethod=marker
+set listchars=trail:•
 
 "=============================================================================
 " gui settings
