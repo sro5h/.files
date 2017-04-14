@@ -36,8 +36,8 @@ set nobackup " disable auto backup
 set noswapfile " disable swap files
 " editor
 colorscheme deep-space
+set termguicolors
 set number
-set relativenumber
 set showcmd
 let mapleader=" "
 set tabstop=4
@@ -45,6 +45,7 @@ set shiftwidth=4
 set expandtab " use spaces instead of tabs
 set hlsearch " highlight search results
 set incsearch " enable incremental search
+set ttimeoutlen=0 " disable esc delay in terminal
 " list chars
 set list
 set listchars=trail:•
@@ -69,10 +70,10 @@ endif
 " user defined mappings
 "=============================================================================
 " more comfortable split navigation
-nnoremap <C-h>h <C-w>h
-nnoremap <C-j>j <C-w>j
-nnoremap <C-k>k <C-w>k
-nnoremap <C-l>l <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 " toggle spell
 nnoremap <leader>s :set spell!<cr>
 " edit vimrc
