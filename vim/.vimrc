@@ -38,11 +38,8 @@ set noswapfile " disable swap files
 colorscheme deep-space
 set number
 set relativenumber
-set ruler " show line number & column
 set showcmd
 let mapleader=" "
-set scrolloff=1
-set backspace=indent,eol,start " proper deletion with backspace
 set tabstop=4
 set shiftwidth=4
 set expandtab " use spaces instead of tabs
