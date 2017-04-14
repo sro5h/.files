@@ -64,6 +64,11 @@ if has("gui_running")
     augroup guicommands
         autocmd GUIEnter * set vb t_vb=
     augroup END
+else
+    " cursor shape in terminal
+    let &t_SI = "\<Esc>[6 q"
+    let &t_SR = "\<Esc>[4 q"
+    let &t_EI = "\<Esc>[2 q"
 endif
 
 "=============================================================================
