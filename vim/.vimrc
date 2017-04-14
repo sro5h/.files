@@ -68,8 +68,6 @@ endif
 "=============================================================================
 " user defined mappings
 "=============================================================================
-nnoremap <leader>o o<esc>
-nnoremap <leader>O O<esc>
 " more comfortable split navigation
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
