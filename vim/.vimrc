@@ -6,13 +6,8 @@ set nocompatible
 call plug#begin('~/.vim/plugins')
 "
 Plug 'sro5h/vim-deep-space'
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'marcweber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate' | Plug 'sro5h/snippets.vim'
 Plug 'pgdouyon/vim-evanesco'
 Plug 'sro5h/vim-syntax'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'rust-lang/rust.vim'
-Plug 'mhinz/vim-startify'
 "
 call plug#end()
 
