@@ -69,10 +69,10 @@ endif
 " user defined mappings
 "=============================================================================
 " more comfortable split navigation
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
+nnoremap <C-h>h <C-w>h
+nnoremap <C-j>j <C-w>j
+nnoremap <C-k>k <C-w>k
+nnoremap <C-l>l <C-w>l
 " toggle spell
 nnoremap <leader>s :set spell!<cr>
 " edit vimrc
