@@ -6,6 +6,7 @@ set nocompatible
 call plug#begin('~/.vim/plugins')
 "
 Plug 'sro5h/vim-deep-space'
+Plug 'itchyny/lightline.vim'
 Plug 'pgdouyon/vim-evanesco'
 Plug 'sro5h/vim-syntax'
 "
@@ -15,12 +16,13 @@ call plug#end()
 " plugin settings
 "=============================================================================
 "
-" airline
+" lightline
 "-----------------------------------------------------------------------------
 set laststatus=2
-let g:airline_theme='deep_space'
-let g:airline_left_sep='>'
-let g:airline_right_sep='<'
+let g:lightline={
+    \ 'separator': { 'left': '>', 'right': '<' },
+    \ 'subseparator': { 'left': '|', 'right': '|' }
+    \ }
 "
 " deep-space
 "-----------------------------------------------------------------------------
