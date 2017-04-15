@@ -20,6 +20,7 @@ call plug#end()
 "-----------------------------------------------------------------------------
 set laststatus=2
 let g:lightline={
+    \ 'colorscheme': 'deepspace',
     \ 'separator': { 'left': '>', 'right': '<' },
     \ 'subseparator': { 'left': '|', 'right': '|' }
     \ }
@@ -51,7 +52,7 @@ set list
 set listchars=trail:•
 
 "=============================================================================
-" gui settings
+" gui & terminal settings
 "=============================================================================
 if has("gui_running")
     set guioptions-=m " disable menu in vim gui
@@ -88,7 +89,7 @@ cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 "=============================================================================
 " user defined autocommands
 "=============================================================================
-augroup commands
+augroup startup
     autocmd!
     autocmd VimEnter * echo "d[ o_0 ]b"
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
