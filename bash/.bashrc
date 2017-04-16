@@ -46,6 +46,14 @@ function git_branch() {
 # custom prompt ' user > host > branch >'
 export PS1="\n\[\e[30;42m\] \u \[\e[m\]\[\e[32;47m\]>\[\e[m\]\[\e[97;47m\] \W \[\e[m\]\[\e[37;100m\]>\[\e[m\]\[\e[96;100m\]\`git_branch\`\[\e[m\]\[\e[37m\]>\[\e[m\] "
 
+# swaps two files using mv
+# usage: swap [file1] [file2]
+function swap()
+{
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
+}
+
 # Author.: Ole J
 # Wraps a completion function
 # make-completion-wrapper <actual completion function> <name of new func.>
