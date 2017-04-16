@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=st
+Comment=A minimal X11 terminal implementation
+Exec=st
+Icon=utilities-terminal
+Terminal=false
+Categories=Utility
