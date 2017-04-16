@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
+# enable colors
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 # ls
-alias ls='ls --color'
-alias l='ls -1 --color -h --group-directories-first'
-alias la='ls -a1 --color -h --group-directories-first'
-alias ll='ls -al --color -h --group-directories-first'
+alias l='ls -1 --color=auto -h --group-directories-first'
+alias la='ls -a1 --color=auto -h --group-directories-first'
+alias ll='ls -al --color=auto -h --group-directories-first'
 
 # clear
 alias cl='clear'
