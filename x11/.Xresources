@@ -1,0 +1,61 @@
+! St settings
+st.termname: xterm-256color
+st.shell: /bin/bash
+
+! Reloadable settings
+st.font: SourceCodePro-Regular:pixelsize=14:antialias=true:autohint=true;
+st.borderpx: 2
+st.cursorshape: 2
+st.cursorthickness: 2
+st.cursorblinkstyle: 0
+st.cursorblinkontype: 0
+st.bold_font: 0
+st.xfps: 120
+st.actionfps: 30
+st.chscale: 1.0
+st.cwscale: 1.0
+st.blinktimeout: 0
+st.bellvolume:0
+
+! Colors
+st.foreground: #9aa4bd
+st.background: #1b202a
+! Black
+st.color0: #1b202a
+! Dark gray
+st.color8: #232936
+! Red
+st.color1: #b15e7c
+! Light red
+st.color9: #b15e7c
+! Green
+st.color2: #709d6c
+! Light green
+st.color10: #709d6c
+! Yellow
+st.color3: #b5a262
+! Light Yellow
+st.color11: #b5a262
+! Blue
+st.color4: #608cc3
+! Light blue
+st.color12: #608cc3
+! Purple
+st.color5: #8f72bf
+! Light purple
+st.color13: #8f72bf
+! Cyan
+st.color6: #56adb7
+! Light cyan
+st.color14: #51617d
+! White
+st.color7: #323c4d
+! Light gray
+st.color15: #9aa7bd
+! Other
+st.color16: #ffffff
+st.color17: #ffffff
+st.color18: #ffffff
+st.color19: #ffffff
+st.color20: #ffffff
+st.color21: #ffffff
