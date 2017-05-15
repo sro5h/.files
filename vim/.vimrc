@@ -73,6 +73,16 @@ else
 endif
 
 "=============================================================================
+" functions
+"=============================================================================
+" generate tags if the file 'tags' exists
+function! GenerateTags()
+    if filereadable("./tags")
+        silent execute "!ctags -R ."
+    endif
+endfunction
+
+"=============================================================================
 " user defined mappings
 "=============================================================================
 " more comfortable split navigation
@@ -106,4 +116,9 @@ augroup CursorLineOnlyInActiveWindow
     autocmd!
     autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     autocmd WinLeave * setlocal nocursorline
+augroup END
+"
+augroup Tags
+    autocmd!
+    autocmd BufWritePost * call GenerateTags()
 augroup END
