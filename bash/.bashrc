@@ -54,6 +54,11 @@ function swap()
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
 }
 
+# enable git completion
+if [ -f /usr/share/bash-completion/completions/git ]; then
+    source /usr/share/bash-completion/completions/git
+fi
+
 # Author.: Ole J
 # Wraps a completion function
 # make-completion-wrapper <actual completion function> <name of new func.>
@@ -93,3 +98,7 @@ complete -o bashdefault -o default -o nospace -F _git_merge_mine gm
 # ls colors
 LS_COLORS='di=34:fi=0:ln=36:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32:*.rpm=90'
 export LS_COLORS
+
+# android studio
+PATH=$PATH:$HOME/Android/Sdk/platform-tools
+
