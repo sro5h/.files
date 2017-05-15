@@ -49,7 +49,7 @@ set incsearch " enable incremental search
 set ttimeoutlen=0 " disable esc delay in terminal
 " list chars
 set list
-set listchars=trail:•
+set listchars=trail:•,tab:>\ 
 
 "=============================================================================
 " gui & terminal settings
