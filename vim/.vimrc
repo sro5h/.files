@@ -93,6 +93,7 @@ augroup startup
     autocmd!
     autocmd VimEnter * echo "d[ o_0 ]b"
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    autocmd FileType cpp setlocal cinoptions+=g0
 augroup END
 "
 augroup autoqf
