@@ -94,6 +94,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " toggle spell
 nnoremap <leader>s :set spell!<cr>
+" add a doxygen style comment
+nnoremap <leader>c O/**<esc>o*<space><esc>hhxo*/<esc>k
 " edit vimrc
 nnoremap <leader>v :edit $MYVIMRC<cr>
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
