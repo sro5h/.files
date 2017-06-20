@@ -9,8 +9,10 @@ Plug 'sro5h/vim-deep-space'
 Plug 'itchyny/lightline.vim'
 Plug 'pgdouyon/vim-evanesco'
 Plug 'sro5h/vim-syntax'
+Plug 'sro5h/vim-taglight'
 "
 call plug#end()
+
 
 "=============================================================================
 " plugin settings
