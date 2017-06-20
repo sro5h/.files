@@ -43,8 +43,8 @@ set termguicolors
 set number
 set showcmd
 let mapleader=" "
-set tabstop=4
-set shiftwidth=4
+set tabstop=8
+set shiftwidth=8
 set expandtab " use spaces instead of tabs
 set hlsearch " highlight search results
 set incsearch " enable incremental search
