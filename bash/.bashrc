@@ -2,13 +2,14 @@
 # enable colors
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 
 # ls
 alias l='ls -1 --color=auto -h --group-directories-first'
 alias la='ls -a1 --color=auto -h --group-directories-first'
 alias ll='ls -al --color=auto -h --group-directories-first'
+
+# cd
+alias ..='cd ..'
 
 # clear
 alias cl='clear'
@@ -104,4 +105,3 @@ export LS_COLORS
 
 # android studio
 PATH=$PATH:$HOME/Android/Sdk/platform-tools
-
