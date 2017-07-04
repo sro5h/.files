@@ -99,15 +99,15 @@ bindsym $mod+e exec i3lock -c "#1b202a"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-    # These bindings trigger as soon as you enter the resize mode
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym j resize grow height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -121,15 +121,15 @@ set $cmd_feh_bg feh --bg-scale
 # mode touchpad
 set $mode_touchpad "touchpad"
 mode $mode_touchpad {
-    # enable touchpad
-    bindsym e exec --no-startup-id $cmd_touchpad_enable; mode "default"
+        # enable touchpad
+        bindsym e exec --no-startup-id $cmd_touchpad_enable; mode "default"
 
-    # disable touchpad
-    bindsym d exec --no-startup-id $cmd_touchpad_disable; mode "default"
+        # disable touchpad
+        bindsym d exec --no-startup-id $cmd_touchpad_disable; mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 bindsym $mod+t mode $mode_touchpad
@@ -137,12 +137,12 @@ bindsym $mod+t mode $mode_touchpad
 # mode launch
 set $mode_launch "launch"
 mode $mode_launch {
-    # launch chrome
-    bindsym c exec google-chrome; mode "default"
+        # launch chrome
+        bindsym c exec google-chrome; mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 bindsym $mod+m mode $mode_launch
@@ -150,13 +150,13 @@ bindsym $mod+m mode $mode_launch
 # mode volume
 set $mode_volume "volume"
 mode $mode_volume {
-    # increase & decrease volume
-    bindsym j exec amixer -D pulse sset Master 5%-
-    bindsym k exec amixer -D pulse sset Master 5%+
+        # increase & decrease volume
+        bindsym j exec amixer -D pulse sset Master 5%-
+        bindsym k exec amixer -D pulse sset Master 5%+
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 bindsym $mod+s mode $mode_volume
@@ -171,21 +171,21 @@ client.urgent           $red    $red    $gray1
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    position top
-    strip_workspace_numbers yes
-    separator_symbol " "
-    status_command i3status
+        position top
+        strip_workspace_numbers yes
+        separator_symbol " "
+        status_command i3status
 
-    colors {
-        background $gray1
-        statusline $gray5
+        colors {
+                background $gray1
+                statusline $gray5
 
-        # class            border  background text
-        focused_workspace  $yellow $yellow $gray1
-        active_workspace   $gray1  $gray1  $gray5
-        inactive_workspace $gray1  $gray1  $yellow
-        urgent_workspace   $red    $red    $gray1
-    }
+                # class            border  background text
+                focused_workspace  $yellow $yellow $gray1
+                active_workspace   $gray1  $gray1  $gray5
+                inactive_workspace $gray1  $gray1  $yellow
+                urgent_workspace   $red    $red    $gray1
+        }
 }
 
 # execs

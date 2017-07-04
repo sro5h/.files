@@ -38,13 +38,13 @@ set -o vi
 
 # get current branch in git repo
 function git_branch() {
-    BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-    if [ ! "${BRANCH}" == "" ]
-    then
-        echo " (${BRANCH}) "
-    else
-        echo ""
-    fi
+        BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+        if [ ! "${BRANCH}" == "" ]
+        then
+                echo " (${BRANCH}) "
+        else
+                echo ""
+        fi
 }
 
 # custom prompt ' user > host > branch >'
@@ -54,13 +54,13 @@ export PS1="\n\[\e[30;42m\] \u \[\e[m\]\[\e[32;47m\]>\[\e[m\]\[\e[97;47m\] \W \[
 # usage: swap [file1] [file2]
 function swap()
 {
-    local TMPFILE=tmp.$$
-    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
+        local TMPFILE=tmp.$$
+        mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
 }
 
 # enable git completion
 if [ -f /usr/share/bash-completion/completions/git ]; then
-    source /usr/share/bash-completion/completions/git
+        source /usr/share/bash-completion/completions/git
 fi
 
 # Author.: Ole J
@@ -74,18 +74,17 @@ fi
 # the 'agi' alias. (complete -F _apt_get_install agi)
 #
 function make-completion-wrapper () {
-    local function_name="$2"
-    local arg_count=$(($#-3))
-    local comp_function_name="$1"
-    shift 2
-    local function="
-function $function_name {
-    ((COMP_CWORD+=$arg_count))
-    COMP_WORDS=( "$@" \${COMP_WORDS[@]:1} )
-    "$comp_function_name"
-    return 0
-}"
-    eval "$function"
+        local function_name="$2"
+        local arg_count=$(($#-3))
+        local comp_function_name="$1"
+        shift 2
+        local function="function $function_name {
+                ((COMP_CWORD+=$arg_count))
+                COMP_WORDS=( "$@" \${COMP_WORDS[@]:1} )
+                "$comp_function_name"
+                return 0
+        }"
+        eval "$function"
 }
 
 # we create a _git_checkout_mine function that will do the completion for "gco"

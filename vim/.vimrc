@@ -22,10 +22,10 @@ call plug#end()
 "-----------------------------------------------------------------------------
 set laststatus=2
 let g:lightline={
-    \ 'colorscheme': 'deepspace',
-    \ 'separator': { 'left': '>', 'right': '<' },
-    \ 'subseparator': { 'left': '|', 'right': '|' }
-    \ }
+        \ 'colorscheme': 'deepspace',
+        \ 'separator': { 'left': '>', 'right': '<' },
+        \ 'subseparator': { 'left': '|', 'right': '|' }
+        \ }
 "
 " deep-space
 "-----------------------------------------------------------------------------
@@ -57,21 +57,21 @@ set listchars=trail:•,tab:>\
 " gui & terminal settings
 "=============================================================================
 if has("gui_running")
-    set guioptions-=m " disable menu in vim gui
-    set guioptions-=T " disable toolbar in vim gui
-    set guioptions-=L " disable left scrollbar
-    set guioptions-=r " disable right scrollbar
-    set lines=999 columns=999 " maximize gvim window
-    set guifont=Consolas:h10
-    " disable bells
-    augroup guicommands
-        autocmd GUIEnter * set vb t_vb=
-    augroup END
+        set guioptions-=m " disable menu in vim gui
+        set guioptions-=T " disable toolbar in vim gui
+        set guioptions-=L " disable left scrollbar
+        set guioptions-=r " disable right scrollbar
+        set lines=999 columns=999 " maximize gvim window
+        set guifont=Consolas:h10
+        " disable bells
+        augroup guicommands
+                autocmd GUIEnter * set vb t_vb=
+        augroup END
 else
-    " cursor shape in terminal
-    let &t_SI = "\<Esc>[6 q"
-    let &t_SR = "\<Esc>[4 q"
-    let &t_EI = "\<Esc>[2 q"
+        " cursor shape in terminal
+        let &t_SI = "\<Esc>[6 q"
+        let &t_SR = "\<Esc>[4 q"
+        let &t_EI = "\<Esc>[2 q"
 endif
 
 "=============================================================================
@@ -79,9 +79,9 @@ endif
 "=============================================================================
 " generate tags if the file 'tags' exists
 function! GenerateTags()
-    if filereadable("./tags")
-        silent execute "!ctags -R ."
-    endif
+        if filereadable("./tags")
+                silent execute "!ctags -R ."
+        endif
 endfunction
 
 "=============================================================================
@@ -104,25 +104,25 @@ cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 " user defined autocommands
 "=============================================================================
 augroup startup
-    autocmd!
-    autocmd VimEnter * echo "d[ o_0 ]b"
-    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-    autocmd FileType cpp setlocal cinoptions+=g0
+        autocmd!
+        autocmd VimEnter * echo "d[ o_0 ]b"
+        autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+        autocmd FileType cpp setlocal cinoptions+=g0
 augroup END
 "
 augroup autoqf
-    autocmd!
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd QuickFixCmdPost    l* lwindow
+        autocmd!
+        autocmd QuickFixCmdPost [^l]* cwindow
+        autocmd QuickFixCmdPost    l* lwindow
 augroup END
 "
 augroup CursorLineOnlyInActiveWindow
-    autocmd!
-    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    autocmd WinLeave * setlocal nocursorline
+        autocmd!
+        autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+        autocmd WinLeave * setlocal nocursorline
 augroup END
 "
 augroup Tags
-    autocmd!
-    autocmd BufWritePost * call GenerateTags()
+        autocmd!
+        autocmd BufWritePost * call GenerateTags()
 augroup END
