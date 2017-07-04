@@ -172,12 +172,14 @@ client.urgent           #fffhff $red   #ffffff
 bar {
     position top
     strip_workspace_numbers yes
+    separator_symbol " "
     status_command i3status
 
     colors {
         background $gray1
         statusline $gray5
-#                          border  background text
+
+        # class            border  background text
         focused_workspace  $purple $purple $gray1
         active_workspace   $gray1  $gray1  $gray5
         inactive_workspace $gray1  $gray1  $purple
