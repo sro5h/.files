@@ -142,6 +142,20 @@ mode $mode_launch {
 
 bindsym $mod+m mode $mode_launch
 
+# mode volume
+set $mode_volume "volume"
+mode $mode_volume {
+    # increase & decrease volume
+    bindsym j exec amixer -D pulse sset Master 5%-
+    bindsym k exec amixer -D pulse sset Master 5%+
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+s mode $mode_volume
+
 # colors
 # class                 border  backgr indicator
 client.focused          #ffffff $blue  #ffffff
