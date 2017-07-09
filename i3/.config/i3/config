@@ -165,7 +165,7 @@ bindsym $mod+s mode $mode_volume
 
 # colors
 # class                 border  backgr  indicator
-client.focused          $yellow $yellow $gray1
+client.focused          $blue   $blue   $gray1
 client.unfocused        $gray3  $gray3  $gray5
 client.focused_inactive $gray3  $gray3  $gray5
 client.urgent           $red    $red    $gray1
