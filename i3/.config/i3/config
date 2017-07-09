@@ -24,8 +24,8 @@ bindsym $mod+Return exec st
 # kill focused window
 bindsym $mod+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# start interrobang (a program launcher)
+bindsym $mod+i exec interrobang
 
 # change focus
 bindsym $mod+h focus left
