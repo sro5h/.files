@@ -103,4 +103,6 @@ LS_COLORS='di=34:fi=0:ln=36:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32:*.rpm=90'
 export LS_COLORS
 
 # android studio
-PATH=$PATH:$HOME/Android/Sdk/platform-tools
+if [ -d "$HOME/Android/Sdk/platform-tools" ]; then
+        PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+fi
