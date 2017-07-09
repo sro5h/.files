@@ -48,7 +48,7 @@ function git_branch() {
 }
 
 # custom prompt ' user > host > branch >'
-export PS1="\n\[\e[30;44m\] \u \[\e[m\]\[\e[34;47m\]>\[\e[m\]\[\e[97;47m\] \W \[\e[m\]\[\e[37;100m\]>\[\e[m\]\[\e[96;100m\]\`git_branch\`\[\e[m\]\[\e[37m\]>\[\e[m\] "
+export PS1="\n\[\e[30;46m\] \u \[\e[m\]\[\e[36;47m\]>\[\e[m\]\[\e[97;47m\] \W \[\e[m\]\[\e[37;100m\]>\[\e[m\]\[\e[96;100m\]\`git_branch\`\[\e[m\]\[\e[37m\]>\[\e[m\] "
 
 # swaps two files using mv
 # usage: swap [file1] [file2]
