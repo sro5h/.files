@@ -20,4 +20,4 @@ bang ! = echo "interrobang ignored \"%s\""
 
 ## Completion
 tab default = percontation "%s" %s | sort -u
-tab ! = ignore="%s%s"; awk '/^bang/ {print "!"$2" ";}' ~/.interrobangrc
+tab ! = ignore="%s%s"; awk '/^bang/ {print "!"$2" ";}' ~/.config/interrobang/config
