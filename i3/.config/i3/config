@@ -193,4 +193,4 @@ bar {
 # execs
 exec --no-startup-id $cmd_xrandr
 exec --no-startup-id nm-applet
-exec_always --no-startup-id $cmd_feh_bg $HOME/Pictures/wallpaper.jpg
+exec_always --no-startup-id $cmd_feh_bg $HOME/Pictures/wallpaper.png
