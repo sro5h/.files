@@ -49,6 +49,7 @@ set expandtab " use spaces instead of tabs
 set hlsearch " highlight search results
 set incsearch " enable incremental search
 set ttimeoutlen=0 " disable esc delay in terminal
+set noshowmode " don't show the mode
 " list chars
 set list
 set listchars=trail:•,tab:>\ 
