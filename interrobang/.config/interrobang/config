@@ -1,0 +1,22 @@
+## Basic configuration
+set font = fixed
+set geometry = 800x30-1-1
+set colors = #68B0E0 #1b202a #48E084 #1b202a #64FFAA #484848
+set border = 2px #56adb7
+set bangchar = !
+set run_hook = %s
+set autocomp = 1
+set list = true
+set margin = -80
+
+## Bangs
+bang term = st -e %s
+bang web = vivaldi %s
+bang man = st -e man %s
+bang ddg = vivaldi https://duckduckgo.com/?q=%s
+bang twitch = vivaldi https://twitch.tv
+bang ! = echo "interrobang ignored \"%s\""
+
+## Completion
+tab default = percontation "%s" %s | sort -u
+tab ! = ignore="%s%s"; awk '/^bang/ {print "!"$2" ";}' ~/.interrobangrc
