@@ -15,10 +15,10 @@ call plug#end()
 
 
 "=============================================================================
-" plugin settings
+" Plugin settings
 "=============================================================================
 "
-" lightline
+" Lightline
 "-----------------------------------------------------------------------------
 set laststatus=2
 let g:lightline={
@@ -27,17 +27,17 @@ let g:lightline={
         \ 'subseparator': { 'left': '|', 'right': '|' }
         \ }
 "
-" deep-space
+" Deep-space
 "-----------------------------------------------------------------------------
 let g:deepspace_italics=1
 
 "=============================================================================
-" vim settings
+" General settings
 "=============================================================================
-set encoding=utf8 " set file encoding to utf-8
-set nobackup " disable auto backup
-set noswapfile " disable swap files
-" editor
+set encoding=utf8 " Set file encoding to utf-8
+set nobackup " Disable auto backup
+set noswapfile " Disable swap files
+" Editor
 colorscheme deep-space
 set termguicolors
 set number
@@ -45,40 +45,40 @@ set showcmd
 let mapleader=" "
 set tabstop=8
 set shiftwidth=8
-set expandtab " use spaces instead of tabs
-set hlsearch " highlight search results
-set incsearch " enable incremental search
-set ttimeoutlen=0 " disable esc delay in terminal
-set noshowmode " don't show the mode
-" list chars
+set expandtab " Use spaces instead of tabs
+set hlsearch " Highlight search results
+set incsearch " Enable incremental search
+set ttimeoutlen=0 " Disable esc delay in terminal
+set noshowmode " Don't show the mode
+" List chars
 set list
 set listchars=trail:•,tab:>\ 
 
 "=============================================================================
-" gui & terminal settings
+" Gui & terminal settings
 "=============================================================================
 if has("gui_running")
-        set guioptions-=m " disable menu in vim gui
-        set guioptions-=T " disable toolbar in vim gui
-        set guioptions-=L " disable left scrollbar
-        set guioptions-=r " disable right scrollbar
-        set lines=999 columns=999 " maximize gvim window
+        set guioptions-=m " Disable menu in vim gui
+        set guioptions-=T " Disable toolbar in vim gui
+        set guioptions-=L " Disable left scrollbar
+        set guioptions-=r " Disable right scrollbar
+        set lines=999 columns=999 " Maximize gvim window
         set guifont=Consolas:h10
-        " disable bells
+        " Disable bells
         augroup guicommands
                 autocmd GUIEnter * set vb t_vb=
         augroup END
 else
-        " cursor shape in terminal
+        " Cursor shape in terminal
         let &t_SI = "\<Esc>[6 q"
         let &t_SR = "\<Esc>[4 q"
         let &t_EI = "\<Esc>[2 q"
 endif
 
 "=============================================================================
-" functions
+" Functions
 "=============================================================================
-" generate tags if the file 'tags' exists
+" Generate tags if the file 'tags' exists
 function! GenerateTags()
         if filereadable("./tags")
                 silent execute "!ctags -R ."
@@ -86,23 +86,23 @@ function! GenerateTags()
 endfunction
 
 "=============================================================================
-" user defined mappings
+" User defined mappings
 "=============================================================================
-" more comfortable split navigation
+" More comfortable split navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-" toggle spell
+" Toggle spell
 nnoremap <leader>s :set spell!<cr>
-" add a doxygen style comment
+" Add a doxygen style comment
 nnoremap <leader>c O/**<esc>o*<space><esc>hhxo*/<esc>k
-" edit vimrc
+" Edit vimrc
 nnoremap <leader>v :edit $MYVIMRC<cr>
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 
 "=============================================================================
-" user defined autocommands
+" User defined autocommands
 "=============================================================================
 augroup startup
         autocmd!

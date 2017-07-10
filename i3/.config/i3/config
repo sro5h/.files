@@ -11,54 +11,54 @@ font pango:SourceCodePro-Regular 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# remove window titles
+# Remove window titles
 new_window pixel 2
 new_float pixel 2
 
-# don't focus on mouse hover
+# Don't focus on mouse hover
 focus_follows_mouse no
 
-# start a terminal
+# Start a terminal
 bindsym $mod+Return exec st
 
-# kill focused window
+# Kill focused window
 bindsym $mod+q kill
 
-# start interrobang (a program launcher)
+# Start interrobang (a program launcher)
 bindsym $mod+i exec interrobang
 
-# change focus
+# Change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# move focused window
+# Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# split in horizontal orientation
+# Split in horizontal orientation
 bindsym $mod+b split h
 
-# split in vertical orientation
+# Split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+w layout tabbed
 bindsym $mod+n layout toggle split
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+# Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# color list
+# Color list
 set $gray1  #1b202a
 set $gray2  #232936
 set $gray3  #323c4d
@@ -73,31 +73,31 @@ set $cyan   #56adb7
 set $orange #b3785d
 set $pink   #c47ebd
 
-# workspaces
-set $workspace1 1:main
-set $workspace2 2:term
-set $workspace3 3:misc
+# Workspaces
+set $ws1 1:main
+set $ws2 2:term
+set $ws3 3:misc
 
-# switch to workspace
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
 
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec i3-msg exit
-# lock the screen
+# Lock the screen
 bindsym $mod+e exec i3lock -c "#1b202a"
 
-# resize window (you can also use the mouse for that)
+# Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         bindsym h resize grow width 10 px or 10 ppt
@@ -105,20 +105,19 @@ mode "resize" {
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
+        # Back to normal: enter or escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
-# commands
+# Commands
 set $cmd_touchpad_enable xinput set-prop 11 "Device Enabled" 1
 set $cmd_touchpad_disable  xinput set-prop 11 "Device Enabled" 0
 set $cmd_xrandr xrandr --dpi 128
 set $cmd_feh_bg feh --bg-scale
 
-# mode touchpad
+# Mode touchpad
 set $mode_touchpad "touchpad"
 mode $mode_touchpad {
         # enable touchpad
@@ -131,10 +130,9 @@ mode $mode_touchpad {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+t mode $mode_touchpad
 
-# mode launch
+# Mode launch
 set $mode_launch "launch"
 mode $mode_launch {
         # launch chrome
@@ -144,10 +142,9 @@ mode $mode_launch {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+m mode $mode_launch
 
-# mode volume
+# Mode volume
 set $mode_volume "volume"
 mode $mode_volume {
         # increase & decrease volume
@@ -160,11 +157,10 @@ mode $mode_volume {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+s mode $mode_volume
 
-# colors
-# class                 border  backgr  indicator
+# Colors
+# Class                 border  backgr  indicator
 client.focused          $blue   $blue   $gray1
 client.unfocused        $gray3  $gray3  $gray5
 client.focused_inactive $gray3  $gray3  $gray5
@@ -182,7 +178,7 @@ bar {
                 background $gray1
                 statusline $gray5
 
-                # class            border  background text
+                # Class            border  background text
                 focused_workspace  $gray3  $gray3  $gray5
                 active_workspace   $gray1  $gray1  $gray5
                 inactive_workspace $gray1  $gray1  $gray5
@@ -190,7 +186,7 @@ bar {
         }
 }
 
-# execs
+# Execs
 exec --no-startup-id $cmd_xrandr
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $cmd_feh_bg $HOME/Pictures/wallpaper.png

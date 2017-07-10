@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-# enable colors
+
+# enable vi like input
+set -o vi
+
+# Enable colors
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
@@ -14,7 +18,7 @@ alias ..='cd ..'
 # clear
 alias cl='clear'
 
-# git aliases
+# git
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit -m'
@@ -26,17 +30,14 @@ alias gb='git branch'
 alias gt='git tag'
 alias gl='git log'
 
-# premake alias
+# premake
 alias pmake='premake5'
 
-# alert alias
+# alert
 # usage: [command]; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# enable vi like input
-set -o vi
-
-# get current branch in git repo
+# Get current branch in git repo
 function git_branch() {
         BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
         if [ ! "${BRANCH}" == "" ]
@@ -47,10 +48,10 @@ function git_branch() {
         fi
 }
 
-# custom prompt ' user > host > branch >'
+# Custom prompt ' user > host > branch >'
 export PS1="\n\[\e[30;46m\] \u \[\e[m\]\[\e[36;47m\]>\[\e[m\]\[\e[97;47m\] \W \[\e[m\]\[\e[37;100m\]>\[\e[m\]\[\e[96;100m\]\`git_branch\`\[\e[m\]\[\e[37m\]>\[\e[m\] "
 
-# enable git completion
+# Enable git completion
 if [ -f /usr/share/bash-completion/completions/git ]; then
         source /usr/share/bash-completion/completions/git
 fi
@@ -79,13 +80,13 @@ function make-completion-wrapper () {
         eval "$function"
 }
 
-# we create a _git_checkout_mine function that will do the completion for "gco"
+# We create a _git_checkout_mine function that will do the completion for "gco"
 # using the completion function "_git"
 make-completion-wrapper _git _git_checkout_mine git checkout
 make-completion-wrapper _git _git_push_mine git push
 make-completion-wrapper _git _git_merge_mine git merge
 
-# we tell bash to actually use _git_checkout_mine to complete "gco"
+# We tell bash to actually use _git_checkout_mine to complete "gco"
 complete -o bashdefault -o default -o nospace -F _git_checkout_mine gj
 complete -o bashdefault -o default -o nospace -F _git_push_mine gp
 complete -o bashdefault -o default -o nospace -F _git_merge_mine gm
@@ -94,7 +95,7 @@ complete -o bashdefault -o default -o nospace -F _git_merge_mine gm
 LS_COLORS='di=34:fi=0:ln=36:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32:*.rpm=90'
 export LS_COLORS
 
-# android studio
+# Android studio
 if [ -d "$HOME/Android/Sdk/" ]; then
         PATH="$PATH:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/emulator"
 fi
