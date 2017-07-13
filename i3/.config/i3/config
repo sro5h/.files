@@ -159,6 +159,9 @@ mode $mode_volume {
 }
 bindsym $mod+s mode $mode_volume
 
+# Window rules
+for_window [class = "App"] floating enable
+
 # Colors
 # Class                 border  backgr  indicator
 client.focused          $blue   $blue   $gray1
