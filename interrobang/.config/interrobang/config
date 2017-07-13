@@ -1,8 +1,8 @@
 ## Basic configuration
 set font = fixed
 set geometry = 800x30-1-1
-set colors = #68B0E0 #1b202a #48E084 #1b202a #64FFAA #484848
-set border = 2px #56adb7
+set colors = #9aa7bd #1b202a #8f72bf #1b202a #709d6c #232936
+set border = 2px #608cc3
 set bangchar = !
 set run_hook = %s
 set autocomp = 1
