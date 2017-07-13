@@ -42,14 +42,22 @@ function git_branch() {
         BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
         if [ ! "${BRANCH}" == "" ]
         then
-                echo " (${BRANCH}) "
+                echo "(${BRANCH}) "
         else
                 echo ""
         fi
 }
 
+# Prompt colors
+colorClear="\[\e[m\]"
+colorUser="\[\e[30;45m\]"
+colorLightSep="\[\e[35;100m\]"
+colorCwd="\[\e[97;100m\]"
+colorBranch="\[\e[96;100m\]"
+colorDarkSep="\[\e[37m\]"
+
 # Custom prompt ' user > host > branch >'
-export PS1="\n\[\e[30;46m\] \u \[\e[m\]\[\e[36;47m\]>\[\e[m\]\[\e[97;47m\] \W \[\e[m\]\[\e[37;100m\]>\[\e[m\]\[\e[96;100m\]\`git_branch\`\[\e[m\]\[\e[37m\]>\[\e[m\] "
+export PS1="\n${colorUser} \u ${colorClear}${colorLightSep}>${colorClear}${colorCwd} \W ${colorClear}${colorBranch}\`git_branch\`${colorClear}${colorDarkSep}>${colorClear} "
 
 # Enable git completion
 if [ -f /usr/share/bash-completion/completions/git ]; then
