@@ -100,8 +100,10 @@ complete -o bashdefault -o default -o nospace -F _git_push_mine gp
 complete -o bashdefault -o default -o nospace -F _git_merge_mine gm
 
 # ls colors
-LS_COLORS='di=34:fi=0:ln=36:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32:*.rpm=90'
-export LS_COLORS
+export LS_COLORS='di=34:fi=0:ln=36:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32:*.rpm=90'
+
+# Use vim as editor
+export EDITOR=vim
 
 # Android studio
 if [ -d "$HOME/Android/Sdk/" ]; then
