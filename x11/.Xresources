@@ -18,37 +18,37 @@ st.blinktimeout: 0
 st.bellvolume:0
 
 ! Colors
-*.foreground: #9aa4bd
-*.background: #1b202a
+*foreground: #9aa4bd
+*background: #1b202a
 ! Black
-*.color0: #1b202a
+*color0: #1b202a
 ! Dark gray
-*.color8: #232936
+*color8: #232936
 ! Red
-*.color1: #b15e7c
+*color1: #b15e7c
 ! Light red
-*.color9: #b15e7c
+*color9: #b3785d
 ! Green
-*.color2: #709d6c
+*color2: #709d6c
 ! Light green
-*.color10: #709d6c
+*color10: #709d6c
 ! Yellow
-*.color3: #b5a262
+*color3: #b5a262
 ! Light Yellow
-*.color11: #b5a262
+*color11: #b5a262
 ! Blue
-*.color4: #608cc3
+*color4: #608cc3
 ! Light blue
-*.color12: #608cc3
+*color12: #608cc3
 ! Purple
-*.color5: #8f72bf
+*color5: #8f72bf
 ! Light purple
-*.color13: #8f72bf
+*color13: #c47ebd
 ! Cyan
-*.color6: #56adb7
+*color6: #56adb7
 ! Light cyan
-*.color14: #51617d
+*color14: #51617d
 ! White
-*.color7: #323c4d
+*color7: #323c4d
 ! Light gray
-*.color15: #9aa7bd
+*color15: #9aa7bd
