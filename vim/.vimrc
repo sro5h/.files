@@ -84,6 +84,12 @@ function! GenerateTags()
                 silent execute "!ctags -R ."
         endif
 endfunction
+" Show highlight group of the word under the cursor
+function! ShowHighlight()
+        echon "hi[" . synIDattr(synID(line("."),col("."),1),"name") . "] "
+        echon "trans[" . synIDattr(synID(line("."),col("."),0),"name") . "] "
+        echon "lo[" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . "]"
+endfunction
 
 "=============================================================================
 " User defined mappings
@@ -100,6 +106,8 @@ nnoremap <leader>c O/**<esc>o*<space><esc>hhxo*/<esc>k
 " Edit vimrc
 nnoremap <leader>v :edit $MYVIMRC<cr>
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+" Show highlight
+nnoremap <f10> :call ShowHighlight()<cr>
 
 "=============================================================================
 " User defined autocommands
