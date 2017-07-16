@@ -15,6 +15,10 @@ floating_modifier $mod
 new_window pixel 2
 new_float pixel 2
 
+# Enable gaps
+gaps inner 5
+gaps outer 0
+
 # Don't focus on mouse hover
 focus_follows_mouse no
 
