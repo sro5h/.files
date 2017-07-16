@@ -63,19 +63,19 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # Color list
-set $gray1  #1b202a
-set $gray2  #232936
-set $gray3  #323c4d
-set $gray4  #51617d
-set $gray5  #9aa7bd
-set $red    #b15e7c
-set $green  #709d6c
-set $yellow #b5a262
-set $blue   #608cc3
-set $purple #8f72bf
-set $cyan   #56adb7
-set $orange #b3785d
-set $pink   #c47ebd
+set_from_resource $gray1  i3wm.color0  #000000
+set_from_resource $gray2  i3wm.color8  #000000
+set_from_resource $gray3  i3wm.color7  #000000
+set_from_resource $gray4  i3wm.color14 #000000
+set_from_resource $gray5  i3wm.color15 #000000
+set_from_resource $red    i3wm.color1  #000000
+set_from_resource $green  i3wm.color2  #000000
+set_from_resource $yellow i3wm.color3  #000000
+set_from_resource $blue   i3wm.color4  #000000
+set_from_resource $purple i3wm.color5  #000000
+set_from_resource $cyan   i3wm.color6  #000000
+set_from_resource $orange i3wm.color9  #000000
+set_from_resource $pink   i3wm.color13 #000000
 
 # Workspaces
 set $ws1 1:main
