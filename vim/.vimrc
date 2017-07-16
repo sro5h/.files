@@ -48,6 +48,8 @@ set shiftwidth=8
 set expandtab " Use spaces instead of tabs
 set hlsearch " Highlight search results
 set incsearch " Enable incremental search
+set ignorecase
+set smartcase " Ignore case if search is lowercase
 set ttimeoutlen=0 " Disable esc delay in terminal
 set noshowmode " Don't show the mode
 " List chars
