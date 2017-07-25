@@ -39,8 +39,8 @@ set noswapfile
 
 " Disable esc delay in terminal
 set ttimeoutlen=0
-" Don't show the mode
 
+" Don't show the mode
 set noshowmode
 " Show the current command
 set showcmd
@@ -89,10 +89,10 @@ if has("gui_running")
         " Disable left scrollbar
         set guioptions-=L
         " Disable right scrollbar
-        set guioptions-=r 
+        set guioptions-=r
 
         " Maximize gvim window
-        set lines=999 columns=999 
+        set lines=999 columns=999
         " Font settings
         set guifont=Consolas:h10
 
