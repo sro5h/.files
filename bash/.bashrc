@@ -40,9 +40,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Get current branch in git repo
 function git_branch() {
-        BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-        if [ ! "${BRANCH}" == "" ]
-        then
+        BRANCH=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+        if [ ! "${BRANCH}" == "" ]; then
                 echo "(${BRANCH}) "
         else
                 echo ""
