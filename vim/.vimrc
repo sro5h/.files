@@ -51,6 +51,8 @@ set listchars=trail:•,tab:>\
 
 " Enable folding
 set foldmethod=marker
+" Start with all folds open
+set foldlevelstart=99
 
 " }}}
 " Editing settings {{{
