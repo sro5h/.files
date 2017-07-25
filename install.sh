@@ -11,10 +11,9 @@ showUsage() {
         echo "  install.sh [options]"
         echo ""
         echo "Options:"
-        echo "  -I              Install all"
-        echo "  -U              Uninstall all"
         echo "  -i <dir>        Install <dir>"
         echo "  -u <dir>        Uninstall <dir>"
+        echo "  -U              Uninstall all"
 }
 
 exists () {
@@ -35,23 +34,20 @@ if ! exists stow; then
 fi
 
 # Parse options
-while getopts "hIUi:u:" opt; do
+while getopts "hi:u:U" opt; do
         case ${opt} in
                 h)
                         showUsage
                         exit 0
-                        ;;
-                I)
-                        installList=(*/)
-                        ;;
-                U)
-                        uninstallList=(*/)
                         ;;
                 i)
                         installList+=("${OPTARG}")
                         ;;
                 u)
                         uninstallList+=("${OPTARG}")
+                        ;;
+                U)
+                        uninstallList=(*/)
                         ;;
                 ?)
                         echo "Unknown option"
@@ -60,10 +56,9 @@ while getopts "hIUi:u:" opt; do
         esac
 done
 
-# Show usage if called without an option
+# Install all if no option is passed
 if ! [ "${installList}" ] && ! [ "${uninstallList}" ]; then
-        showUsage
-        exit 1
+        installList=(*/)
 fi
 
 # Install selected files
@@ -75,3 +70,5 @@ done
 for item in "${uninstallList[@]}"; do
         uninstall "${item}"
 done
+
+echo "Done."
