@@ -75,7 +75,7 @@ set hlsearch
 set incsearch
 " Ignore case while searching
 set ignorecase
-" Ignore case if search is lowercase
+" ^ unless a capital letter is used
 set smartcase
 
 " }}}
@@ -163,6 +163,8 @@ augroup Startup
         autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
         " Indent 'private:' etc. correctly
         autocmd FileType cpp setlocal cinoptions+=g0
+        " Enable spell checking
+        autocmd FileType gitcommit,markdown setlocal spell
 augroup END
 
 " Automatically open the quickfix window when it gets filled
