@@ -2,6 +2,7 @@ set nocompatible
 
 " Plugins {{{
 "-----------------------------------------------------------------------------
+
 call plug#begin('~/.vim/plugins')
 
 Plug 'sro5h/vim-deep-space'
@@ -11,7 +12,6 @@ Plug 'sro5h/vim-syntax'
 Plug 'sro5h/vim-taglight'
 
 call plug#end()
-
 
 " }}}
 " Plugin settings {{{
@@ -57,6 +57,7 @@ set foldlevelstart=99
 " }}}
 " Editing settings {{{
 "-----------------------------------------------------------------------------
+
 colorscheme deep-space
 " Enable true color
 set termguicolors
@@ -81,6 +82,7 @@ set smartcase
 " }}}
 " Gui & terminal settings {{{
 "-----------------------------------------------------------------------------
+
 if has("gui_running")
         " Disable menu in vim gui
         set guioptions-=m
