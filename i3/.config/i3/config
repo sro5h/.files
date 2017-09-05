@@ -16,7 +16,7 @@ new_window pixel 2
 new_float pixel 2
 
 # Enable gaps
-gaps inner 5
+gaps inner 7
 gaps outer 0
 
 # Don't focus on mouse hover
