@@ -85,14 +85,8 @@ set smartcase
 "-----------------------------------------------------------------------------
 
 if has("gui_running")
-        " Disable menu in vim gui
-        set guioptions-=m
-        " Disable toolbar in vim gui
-        set guioptions-=T
-        " Disable left scrollbar
-        set guioptions-=L
-        " Disable right scrollbar
-        set guioptions-=r
+        " Disable all unnecessary gui options
+        set guioptions=c
 
         " Maximize gvim window
         set lines=999 columns=999
