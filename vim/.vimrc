@@ -147,11 +147,11 @@ nnoremap <leader>e :e **/*
 " Edit vimrc
 nnoremap <leader>v :edit $MYVIMRC<cr>
 
-" Shortcut to get the current directory
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-
 " Show highlight
 nnoremap <f10> :call ShowHighlight()<cr>
+
+" Shortcut to get the current directory
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 
 " }}}
 " User defined autocommands {{{
