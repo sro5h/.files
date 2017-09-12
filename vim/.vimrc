@@ -19,7 +19,6 @@ call plug#end()
 "-----------------------------------------------------------------------------
 
 " Lightline
-set laststatus=2
 let g:lightline={
         \ 'colorscheme': 'deepspace',
         \ 'separator': { 'left': '>', 'right': '<' },
@@ -45,6 +44,8 @@ set ttimeoutlen=0
 set noshowmode
 " Show the current command
 set showcmd
+" Always show the status line
+set laststatus=2
 
 " List chars
 set list
