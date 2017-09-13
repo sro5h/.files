@@ -110,14 +110,14 @@ endif
 "-----------------------------------------------------------------------------
 
 " Generate tags if the file 'tags' exists
-function! GenerateTags()
+function! GenerateTags() abort
         if filereadable("./tags")
                 silent execute "!ctags -R ."
         endif
 endfunction
 
 " Show highlight group of the word under the cursor
-function! ShowHighlight()
+function! ShowHighlight() abort
         echon "hi[" . synIDattr(synID(line("."),col("."),1),"name") . "] "
         echon "trans[" . synIDattr(synID(line("."),col("."),0),"name") . "] "
         echon "lo[" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . "]"
