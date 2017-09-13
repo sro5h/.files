@@ -1,3 +1,15 @@
+"
+" .vimrc
+"
+" Author:
+"     Paul Meffle
+"
+" Summary:
+"     My personal vim configuration
+"
+" License:
+"     Vim license
+
 set nocompatible
 
 " Plugins {{{
