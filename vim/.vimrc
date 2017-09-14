@@ -170,7 +170,7 @@ cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 
 augroup Startup
         autocmd!
-        autocmd VimEnter * echo "d[ o_0 ]b"
+        autocmd VimEnter * echo "d[ o_0 ]b <[\"Hello sro5h\"]"
         autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
         " Indent 'private:' etc. correctly
         autocmd FileType cpp setlocal cinoptions+=g0
