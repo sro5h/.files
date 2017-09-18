@@ -21,6 +21,7 @@ Plug 'pgdouyon/vim-evanesco'
 Plug 'sro5h/vim-syntax'
 Plug 'sro5h/vim-taglight'
 Plug 'rust-lang/rust.vim'
+Plug 'sro5h/vim-greetings'
 
 call plug#end()
 
@@ -170,7 +171,7 @@ cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 
 augroup Startup
         autocmd!
-        autocmd VimEnter * echo "d[ o_0 ]b <[\"Hello sro5h\"]"
+        autocmd VimEnter * echo greetings#RandomGreeting()
         autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
         " Indent 'private:' etc. correctly
         autocmd FileType cpp setlocal cinoptions+=g0
