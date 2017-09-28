@@ -168,8 +168,8 @@ for_window [class = "App"] floating enable
 # Colors
 # Class                 border  backgr  indicator
 client.focused          $blue   $blue   $gray1
-client.unfocused        $gray3  $gray3  $gray5
-client.focused_inactive $gray3  $gray3  $gray5
+client.unfocused        $gray2  $gray2  $gray5
+client.focused_inactive $gray2  $gray2  $gray5
 client.urgent           $red    $red    $gray1
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -185,7 +185,7 @@ bar {
                 statusline $gray5
 
                 # Class            border  background text
-                focused_workspace  $gray3  $gray3  $gray5
+                focused_workspace  $gray2  $gray2  $gray5
                 active_workspace   $gray1  $gray1  $gray5
                 inactive_workspace $gray1  $gray1  $gray5
                 urgent_workspace   $orange $orange $gray1
