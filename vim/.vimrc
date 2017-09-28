@@ -15,7 +15,7 @@
 
 call plug#begin('~/.vim/plugins')
 
-Plug 'sro5h/vim-deep-space'
+Plug 'cocopon/iceberg.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'pgdouyon/vim-evanesco'
 Plug 'sro5h/vim-syntax'
@@ -31,7 +31,7 @@ call plug#end()
 
 " Lightline
 let g:lightline={
-        \ 'colorscheme': 'deepspace',
+        \ 'colorscheme': 'iceberg',
         \ 'separator': { 'left': '>', 'right': '<' },
         \ 'subseparator': { 'left': '|', 'right': '|' }
         \ }
@@ -71,7 +71,7 @@ set foldlevelstart=99
 " Editing settings {{{
 "-----------------------------------------------------------------------------
 
-colorscheme deep-space
+colorscheme iceberg
 " Enable true color
 set termguicolors
 " Show line numbers
