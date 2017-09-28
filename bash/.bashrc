@@ -53,7 +53,7 @@ colorClear="\[\e[m\]"
 colorUser="\[\e[30;45m\]"
 colorLightSep="\[\e[35;100m\]"
 colorCwd="\[\e[97;100m\]"
-colorBranch="\[\e[96;100m\]"
+colorBranch="\[\e[97;100m\]"
 colorDarkSep="\[\e[37m\]"
 
 # Custom prompt ' user > host > branch >'
