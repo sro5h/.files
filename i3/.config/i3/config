@@ -12,8 +12,8 @@ font pango:SourceCodePro-Regular 10
 floating_modifier $mod
 
 # Remove window titles
-new_window pixel 1
-new_float pixel 1
+new_window pixel 2
+new_float pixel 2
 
 # Enable gaps
 gaps inner 7

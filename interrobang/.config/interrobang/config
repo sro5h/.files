@@ -2,7 +2,7 @@
 set font = fixed
 set geometry = 800x30-1-1
 set colors = #c6c8d1 #161821 #a093c7 #161821 #84a0c6 #1e2132
-set border = 1px #84a0c6
+set border = 2px #84a0c6
 set bangchar = !
 set run_hook = %s
 set autocomp = 1
