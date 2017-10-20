@@ -78,9 +78,9 @@ set_from_resource $orange i3wm.color9  #000000
 set_from_resource $pink   i3wm.color13 #000000
 
 # Workspaces
-set $ws1 1:main
-set $ws2 2:term
-set $ws3 3:misc
+set $ws1 1:00
+set $ws2 2:01
+set $ws3 3:10
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
