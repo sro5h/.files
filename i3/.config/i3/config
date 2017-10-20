@@ -167,7 +167,7 @@ for_window [class = "App"] floating enable
 
 # Colors
 # Class                 border  backgr  indicator
-client.focused          $blue   $blue   $gray1
+client.focused          $gray3   $gray3   $gray1
 client.unfocused        $gray2  $gray2  $gray5
 client.focused_inactive $gray2  $gray2  $gray5
 client.urgent           $red    $red    $gray1
