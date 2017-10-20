@@ -1,0 +1,14 @@
+#! /bin/bash
+
+batteryPath="/sys/class/power_supply/BAT1/capacity"
+
+while read -r line; do
+        case $line in
+                SYS*)
+                        # System info
+                        timeStr=$(date +%H:%M:%S)
+                        batteryStr="$(cat ${batteryPath})%"
+                        ;;
+        esac
+        printf "%s\n" "%{c}${timeStr}%{r}${batteryStr}"
+done

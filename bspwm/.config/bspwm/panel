@@ -1,0 +1,24 @@
+#! /bin/bash
+
+panelFifo="/tmp/panel_fifo"
+panelHeight=24
+
+function subscribe_info {
+        while [ -e "${panelFifo}" ]; do
+                echo SYS
+                sleep 5
+        done
+}
+
+# Kill all members of the process group aswell
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+[ -e "${panelFifo}" ] && rm "${panelFifo}"
+mkfifo "${panelFifo}"
+
+bspc subscribe report > "${panelFifo}" &
+subscribe_info > "${panelFifo}" &
+
+./panel_feeder < "${panelFifo}" | lemonbar -g x${panelHeight} | sh &
+
+wait
