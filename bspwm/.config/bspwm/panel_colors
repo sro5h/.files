@@ -1,0 +1,6 @@
+#! /bin/bash
+
+colorDefaultFg="#ffffff"
+colorDefaultBg="#000000"
+colorFocusedFg="#00ff00"
+colorFocusedBg="#000000"
