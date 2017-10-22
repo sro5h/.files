@@ -3,7 +3,7 @@
 panelFifo="/tmp/panel_fifo"
 panelHeight=24
 
-function subscribe_info {
+subscribe_info() {
         while [ -e "${panelFifo}" ]; do
                 echo SYS
                 sleep 5
