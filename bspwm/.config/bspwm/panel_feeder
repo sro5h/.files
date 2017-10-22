@@ -5,10 +5,10 @@ batteryPath="/sys/class/power_supply/BAT1/capacity"
 # Source the panel color definitions
 . panel_colors
 
-setWindowManagerString() {
+setWorkspaceString() {
         item=$1
 
-        case $item in
+        case ${item} in
                 [fou]*)
                         workspaceFg=${colorDefaultFg}
                         workspaceBg=${colorDefaultBg}
@@ -23,7 +23,7 @@ setWindowManagerString() {
 }
 
 while read -r line; do
-        case $line in
+        case ${line} in
                 SYS*)
                         # System info
                         timeStr=$(date +%H:%M:%S)
@@ -38,9 +38,9 @@ while read -r line; do
                         while [ $# -gt 0 ]; do
                                 item=$1
 
-                                case $item in
+                                case ${item} in
                                         [fFoOuU]*)
-                                                setWindowManagerString $item
+                                                setWorkspaceString "${item}"
                                                 ;;
                                 esac
 
@@ -49,5 +49,5 @@ while read -r line; do
                         done
                         ;;
         esac
-        printf "%s\n" "%{l}${wm}%{c}${timeStr}%{r}${batteryStr}"
+        printf "%s\\n" "%{l}${wm}%{c}${timeStr}%{r}${batteryStr}"
 done
