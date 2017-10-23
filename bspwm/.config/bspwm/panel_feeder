@@ -1,6 +1,8 @@
 #! /bin/bash
 
 batteryPath="/sys/class/power_supply/BAT1/capacity"
+sepRight=">"
+sepLeft="<"
 
 # Source the panel color definitions
 . panel_colors
@@ -19,7 +21,7 @@ setWorkspaceString() {
                         ;;
         esac
 
-        wm="${wm}%{F${workspaceFg}}%{B${workspaceBg}} ${item#?} %{B-}%{F-}"
+        wm="${wm}%{F${workspaceFg}}%{B${workspaceBg}} ${item#?} ${sepRight} %{B-}%{F-}"
 }
 
 while read -r line; do
@@ -49,5 +51,5 @@ while read -r line; do
                         done
                         ;;
         esac
-        printf "%s\\n" "%{l}${wm}%{c}${timeStr}%{r}${batteryStr}"
+        printf "%s\\n" "%{l}${wm}%{c}${sepLeft} ${timeStr} ${sepRight}%{r}${sepLeft} ${batteryStr} "
 done
