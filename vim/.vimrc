@@ -175,7 +175,7 @@ augroup Startup
         autocmd VimEnter * echo greetings#RandomGreeting()
         autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
         " Indent 'private:' etc. correctly
-        autocmd FileType cpp setlocal cinoptions+=g0
+        autocmd FileType cpp setlocal cinoptions+=g0:0
         " Enable spell checking
         autocmd FileType gitcommit,markdown setlocal spell
 augroup END
