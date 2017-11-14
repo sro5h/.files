@@ -21,6 +21,7 @@ Plug 'junegunn/vim-slash'
 Plug 'sro5h/vim-syntax'
 Plug 'sro5h/vim-taglight'
 Plug 'rust-lang/rust.vim'
+Plug 'othree/html5-syntax.vim'
 Plug 'sro5h/vim-greetings'
 
 call plug#end()
