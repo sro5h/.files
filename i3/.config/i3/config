@@ -185,9 +185,9 @@ bar {
                 statusline $gray5
 
                 # Class            border  background text
-                focused_workspace  $blue   $blue   $gray1
-                active_workspace   $gray1  $gray1  $gray5
-                inactive_workspace $gray1  $gray1  $gray5
+                focused_workspace  $gray1  $gray1  $blue
+                active_workspace   $gray1  $gray1  $gray3
+                inactive_workspace $gray1  $gray1  $gray3
                 urgent_workspace   $orange $orange $gray1
         }
 }
