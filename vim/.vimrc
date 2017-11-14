@@ -37,9 +37,6 @@ let g:lightline={
         \ 'subseparator': { 'left': '|', 'right': '|' }
         \ }
 
-" Deep-space
-let g:deepspace_italics=1
-
 " }}}
 " General settings {{{
 "-----------------------------------------------------------------------------
