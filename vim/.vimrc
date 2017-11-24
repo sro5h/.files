@@ -145,6 +145,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Open netrw
+nnoremap - :Dirvish<cr>
+
 " Toggle spell
 nnoremap <leader>s :set spell!<cr>
 
