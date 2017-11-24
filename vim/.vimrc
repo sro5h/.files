@@ -17,7 +17,6 @@ call plug#begin('~/.vim/plugins')
 
 Plug 'cocopon/iceberg.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/vim-slash'
 Plug 'sro5h/vim-syntax'
 Plug 'sro5h/vim-taglight'
 Plug 'rust-lang/rust.vim'
