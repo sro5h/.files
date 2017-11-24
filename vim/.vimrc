@@ -20,9 +20,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'sro5h/vim-syntax'
 Plug 'sro5h/vim-taglight'
+Plug 'sro5h/vim-greetings'
 Plug 'rust-lang/rust.vim'
 Plug 'othree/html5-syntax.vim'
-Plug 'sro5h/vim-greetings'
 
 call plug#end()
 
