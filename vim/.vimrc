@@ -148,8 +148,8 @@ nnoremap <C-l> <C-w>l
 " Clear search highlight
 nnoremap <silent> <cr> :nohlsearch<cr>
 
-" Open netrw
-nnoremap - :Dirvish<cr>
+" Open dirvish on current file
+nnoremap - :Dirvish %<cr>
 
 " Toggle spell
 nnoremap <leader>s :set spell!<cr>
