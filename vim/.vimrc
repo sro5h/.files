@@ -16,7 +16,6 @@
 call plug#begin('~/.vim/plugins')
 
 Plug 'cocopon/iceberg.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'sro5h/vim-syntax'
 Plug 'sro5h/vim-taglight'
@@ -29,13 +28,6 @@ call plug#end()
 " }}}
 " Plugin settings {{{
 "-----------------------------------------------------------------------------
-
-" Lightline
-let g:lightline={
-        \ 'colorscheme': 'iceberg',
-        \ 'separator': { 'left': '>', 'right': '<' },
-        \ 'subseparator': { 'left': '|', 'right': '|' }
-        \ }
 
 " }}}
 " General settings {{{
@@ -89,6 +81,20 @@ set incsearch
 set ignorecase
 " ^ unless a capital letter is used
 set smartcase
+
+" }}}
+" Statusline
+"-----------------------------------------------------------------------------
+set statusline=
+set statusline+=%#icebergLLNormal#
+set statusline+=\ %f\ 
+set statusline+=%#LineNr#
+set statusline+=>\ %m
+set statusline+=%=
+set statusline+=%y\ 
+set statusline+=<
+set statusline+=%#icebergLLNormal#
+set statusline+=\ %l:%c\ 
 
 " }}}
 " Gui & terminal settings {{{
