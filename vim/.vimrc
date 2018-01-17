@@ -155,7 +155,7 @@ nnoremap - :Dirvish %<cr>
 nnoremap <leader>s :set spell!<cr>
 
 " Add a doxygen style comment
-nnoremap <leader>d O/**<esc>o<space>*<space><esc>o*/<esc>k
+nnoremap <leader>d O/**<cr><esc>i<space>*<cr>*/<esc>k
 
 " Partial file name matching
 nnoremap <leader>e :e **/*
