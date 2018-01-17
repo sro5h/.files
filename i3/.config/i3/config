@@ -118,7 +118,7 @@ bindsym $mod+r mode "resize"
 # Commands
 set $cmd_touchpad_enable xinput set-prop 11 "Device Enabled" 1
 set $cmd_touchpad_disable  xinput set-prop 11 "Device Enabled" 0
-set $cmd_bg xsetroot -solid "#161821"
+set $cmd_bg feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # Mode touchpad
 set $mode_touchpad "touchpad"
@@ -168,7 +168,7 @@ for_window [class = "App"] floating enable
 
 # Colors
 # Class                 border  backgr  indicator
-client.focused          $gray3   $gray3   $gray1
+client.focused          $gray3  $gray3  $gray1
 client.unfocused        $gray2  $gray2  $gray5
 client.focused_inactive $gray2  $gray2  $gray5
 client.urgent           $red    $red    $gray1
@@ -182,13 +182,13 @@ bar {
         status_command i3status
 
         colors {
-                background $gray1
+                background #000000
                 statusline $gray5
 
-                # Class            border  background text
-                focused_workspace  $gray1  $gray1  $blue
-                active_workspace   $gray1  $gray1  $gray3
-                inactive_workspace $gray1  $gray1  $gray3
+                # Class            border  bg      text
+                focused_workspace  #000000 #000000 $blue
+                active_workspace   #000000 #000000 $gray3
+                inactive_workspace #000000 #000000 $gray3
                 urgent_workspace   $orange $orange $gray1
         }
 }
