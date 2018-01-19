@@ -29,7 +29,7 @@ alias gd='git diff'
 alias gm='git merge'
 alias gb='git branch'
 alias gt='git tag'
-alias gl='git log'
+alias gl='git log --graph --all --abbrev-commit'
 
 # premake
 alias pmake='premake5'
