@@ -7,11 +7,6 @@ set -o vi
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-# ls
-alias l='ls -1 --color=auto -h --group-directories-first'
-alias la='ls -a1 --color=auto -h --group-directories-first'
-alias ll='ls -al --color=auto -h --group-directories-first'
-
 # cd
 alias ..='cd ..'
 
