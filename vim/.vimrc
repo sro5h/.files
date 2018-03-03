@@ -77,10 +77,6 @@ set expandtab
 set hlsearch
 " Enable incremental search
 set incsearch
-" Ignore case while searching
-set ignorecase
-" ^ unless a capital letter is used
-set smartcase
 
 " }}}
 " Statusline
