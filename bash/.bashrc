@@ -105,7 +105,7 @@ if [ -d "$HOME/Android/Sdk/" ]; then
         PATH="$PATH:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/emulator"
 fi
 
-# Rust binaries
-if [ -d "$HOME/.cargo/bin/" ]; then
-        PATH="$PATH:$HOME/.cargo/bin"
+# Custom binaries
+if [ -d "$HOME/.bin/" ]; then
+        PATH="$PATH:$HOME/.bin"
 fi
