@@ -10,6 +10,16 @@
 " License:
 "       Vim license
 
+" Plugins
+" ------------------------------------------------------------------------------
+call plug#begin('~/.vim/plugins')
+
+Plug 'cocopon/iceberg.vim'
+Plug 'sro5h/vim-syntax'
+
+call plug#end()
+
+
 " General settings
 " ------------------------------------------------------------------------------
 
@@ -29,6 +39,12 @@ set listchars=trail:~
 
 " Editing settings
 " ------------------------------------------------------------------------------
+
+" Set colorscheme
+colorscheme iceberg
+
+" Enable true color
+set termguicolors
 
 " Show line numbers
 set number
