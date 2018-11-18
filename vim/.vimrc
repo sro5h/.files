@@ -14,7 +14,7 @@
 " ------------------------------------------------------------------------------
 call plug#begin('~/.vim/plugins')
 
-Plug 'cocopon/iceberg.vim'
+Plug 'protesilaos/prot16-vim'
 Plug 'sro5h/vim-syntax'
 
 call plug#end()
@@ -41,7 +41,7 @@ set listchars=trail:~
 " ------------------------------------------------------------------------------
 
 " Set colorscheme
-colorscheme iceberg
+colorscheme hinterland_dark
 
 " Enable true color
 set termguicolors
