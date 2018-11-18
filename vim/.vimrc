@@ -32,6 +32,8 @@ set noswapfile
 set noshowmode
 " Always show the status line
 set laststatus=2
+" Show cursor line
+set cursorline
 
 " Enable list chars
 set list
