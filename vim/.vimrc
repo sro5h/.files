@@ -39,6 +39,9 @@ set cursorline
 set list
 set listchars=trail:~
 
+" Fix escape not triggering immediately
+set ttimeoutlen=0
+
 " Editing settings
 " ------------------------------------------------------------------------------
 
