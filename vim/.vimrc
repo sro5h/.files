@@ -10,6 +10,28 @@
 " License:
 "       MIT license
 
+" Plugin setup, depends on the plugin manager introduced in vim 8
+" ------------------------------------------------------------------------------
+
+" The plugin directory
+let b:plugin_directory = $HOME . '/.vim/pack/sro5h/start/'
+
+" Clones a git repository into the plugin directory
+function! ClonePlugin(user, repository)
+        let s:github_url = 'https://github.com/' . a:user . '/' . a:repository
+        let s:directory  = b:plugin_directory . a:repository
+        let s:command    = 'git clone ' . s:github_url . ' ' . s:directory
+
+        echo('Cloning plugin ' . a:repository . ' into ' . s:directory)
+        call system(s:command)
+        echo('Done.')
+endfunction
+
+" Create plugin directory and download plugins
+if v:version >= 800 && !isdirectory(b:plugin_directory)
+        call ClonePlugin('protesilaos', 'prot16-vim')
+endif
+
 " General settings
 " ------------------------------------------------------------------------------
 
@@ -35,6 +57,8 @@ let &t_8b="\<esc>[48;2;%lu;%lu;%lum"
 " Editing settings
 " ------------------------------------------------------------------------------
 
+" Set colorscheme
+colorscheme hinterland_dark
 " Show line numbers
 set number
 " Show the cursor line
