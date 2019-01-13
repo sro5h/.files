@@ -2,13 +2,13 @@
 # .bashrc
 #
 # Author:
-#	Paul Meffle
+#       Paul Meffle
 #
 # Summary:
-#	My personal bash configuration
+#       My personal bash configuration
 #
 # License:
-#	MIT license
+#       MIT license
 
 # Enable colors
 alias ls='ls --color=auto'
