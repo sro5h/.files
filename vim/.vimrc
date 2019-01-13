@@ -70,6 +70,9 @@ set shiftwidth=8
 " Use spaces instead of tabs
 set expandtab
 
+" Enable indentation on new lines
+set cindent
+
 " Enable list chars
 set list
 " Show trailing spaces
