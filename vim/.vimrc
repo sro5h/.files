@@ -26,6 +26,12 @@ set laststatus=2
 " Fix escape not triggering immediately
 set ttimeoutlen=0
 
+" Enable true color support
+set termguicolors
+" Set vim-specific sequences for RGB colors
+let &t_8f="\<esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<esc>[48;2;%lu;%lu;%lum"
+
 " Editing settings
 " ------------------------------------------------------------------------------
 
