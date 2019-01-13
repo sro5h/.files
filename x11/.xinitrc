@@ -1,0 +1,2 @@
+status.bash&
+exec dwm

@@ -33,3 +33,8 @@ alias gl='git log --graph --abbrev-commit'
 # Common variables
 export PS1="\u \w\n$ "
 export EDITOR=vim
+
+# Custom binaries
+if [ -d "${HOME}/.local/bin" ]; then
+        PATH="${PATH}:${HOME}/.local/bin"
+fi
