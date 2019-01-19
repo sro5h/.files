@@ -29,7 +29,7 @@ endfunction
 
 " Create plugin directory and download plugins
 if v:version >= 800 && !isdirectory(b:plugin_directory)
-        call ClonePlugin('protesilaos', 'prot16-vim')
+        call ClonePlugin('sro5h', 'vim-neon-rain')
 endif
 
 " General settings
@@ -58,7 +58,7 @@ let &t_8b="\<esc>[48;2;%lu;%lu;%lum"
 " ------------------------------------------------------------------------------
 
 " Set colorscheme
-colorscheme hinterland_dark
+colorscheme neon_rain
 " Show line numbers
 set number
 " Show the cursor line
