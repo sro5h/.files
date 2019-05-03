@@ -38,3 +38,8 @@ export EDITOR=vim
 if [ -d "${HOME}/.local/bin" ]; then
         PATH="${PATH}:${HOME}/.local/bin"
 fi
+
+# Flutter binaries
+if [ -d "${HOME}/.local/bin/flutter/bin" ]; then
+        PATH="${PATH}:${HOME}/.local/bin/flutter/bin"
+fi
