@@ -13,6 +13,10 @@
 " Plugin setup, depends on the plugin manager introduced in vim 8
 " ------------------------------------------------------------------------------
 
+" Turn on filetype and syntax support
+filetype plugin indent on
+syntax on
+
 " The plugin directory
 let b:plugin_directory = $HOME . '/.vim/pack/sro5h/start/'
 
