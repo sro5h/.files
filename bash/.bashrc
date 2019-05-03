@@ -17,6 +17,10 @@ alias grep='grep --color=auto'
 # Common aliases
 alias cl='clear'
 
+# Cd aliases
+alias cdr='cd ~/development/repositories'
+alias cdp='cd ~/development/projects'
+
 # Git aliases
 alias gs='git status'
 alias gd='git diff'
