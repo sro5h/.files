@@ -36,7 +36,7 @@ alias gf='git fetch'
 alias gl='git log --graph --abbrev-commit'
 
 # Common variables
-export PS1="\u \w\n$ "
+export PS1="\u \e[0;34m\w\e[0m\n$ "
 export EDITOR=vim
 
 # Custom binaries
