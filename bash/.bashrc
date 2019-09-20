@@ -16,6 +16,7 @@ alias grep='grep --color=auto'
 
 # Common aliases
 alias cl='clear'
+alias pmake='premake5'
 
 # Cd aliases
 alias cdr='cd ~/development/repositories'
