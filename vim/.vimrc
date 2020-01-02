@@ -77,6 +77,9 @@ set shiftwidth=8
 " Use spaces instead of tabs
 set expandtab
 
+" Remove scrolling offset
+set scrolloff=0
+
 " Enable indentation on new lines
 set cindent
 
