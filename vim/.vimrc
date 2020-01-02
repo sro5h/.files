@@ -33,8 +33,8 @@ endfunction
 
 " Create plugin directory and download plugins
 if v:version >= 800 && !isdirectory(b:plugin_directory)
-        call ClonePlugin('sro5h', 'vim-neon-rain')
         call ClonePlugin('sro5h', 'vim-syntax')
+        call ClonePlugin('niklas-8', 'vim-darkspace')
         call ClonePlugin('dart-lang', 'dart-vim-plugin')
 endif
 
@@ -63,8 +63,9 @@ let &t_8b="\<esc>[48;2;%lu;%lu;%lum"
 " Editing settings
 " ------------------------------------------------------------------------------
 
-" Set colorscheme
-colorscheme neon_rain
+" Set color scheme
+colorscheme darkspace
+
 " Show line numbers
 set number
 " Show the cursor line
