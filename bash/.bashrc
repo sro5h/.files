@@ -1,14 +1,7 @@
-#
 # .bashrc
-#
-# Author:
-#       Paul Meffle
-#
-# Summary:
-#       My personal bash configuration
-#
-# License:
-#       MIT license
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
 # Enable colors
 alias ls='ls --color=auto'
@@ -36,7 +29,7 @@ alias gf='git fetch'
 alias gl='git log --graph --abbrev-commit'
 
 # Common variables
-export PS1="\u \e[0;34m\w\e[0m\n$ "
+export PS1="\u@\h \e[0;34m\w\e[0m\n$ "
 export EDITOR=vim
 
 # Custom binaries
@@ -44,10 +37,5 @@ if [ -d "${HOME}/.local/bin" ]; then
         PATH="${PATH}:${HOME}/.local/bin"
 fi
 
-# Flutter binaries
-if [ -d "${HOME}/.local/bin/flutter/bin" ]; then
-        PATH="${PATH}:${HOME}/.local/bin/flutter/bin"
-fi
-
 # Cpp include paths
-CPLUS_INCLUDE_PATH="${CPLUS_INCLUDE_PATH}:/usr/include"
+export CPLUS_INCLUDE_PATH="${CPLUS_INCLUDE_PATH}:/usr/include"
