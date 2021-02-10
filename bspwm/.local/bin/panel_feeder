@@ -1,0 +1,51 @@
+#! /bin/bash
+
+. panel_config
+
+setWorkspaceString() {
+        item=$1
+
+        case ${item} in
+                [fou]*)
+                        workspaceFg=${colorDefaultFg}
+                        workspaceBg=${colorDefaultBg}
+                        ;;
+                [FOU]*)
+                        workspaceFg=${colorFocusedFg}
+                        workspaceBg=${colorFocusedBg}
+                        ;;
+        esac
+
+        wmStr="${wmStr}%{F${workspaceFg}}%{B${workspaceBg}} ${item#?} %{B-}%{F-}"
+}
+
+while read -r line; do
+        case ${line} in
+                SYS*)
+                        # System info
+                        timeStr="%{F${colorFocusedFg}}$(date +%H:%M)%{F-}"
+                        # TODO: Uncomment
+                        #batteryStr="$(cat ${batteryPath})%"
+                        batteryStr="%{F${colorFocusedFg}}71%%%{F-}"
+                        ;;
+                W*)
+                        wmStr=""
+                        IFS=":"
+                        set -- ${line#?}
+
+                        while [ $# -gt 0 ]; do
+                                item=$1
+
+                                case ${item} in
+                                        [fFoOuU]*)
+                                                setWorkspaceString "${item}"
+                                                ;;
+                                esac
+
+                                # Get next item
+                                shift
+                        done
+                        ;;
+        esac
+        printf "%s\\n" "%{l} ${wmStr} ${sepRight}%{c}${sepLeft} ${timeStr} ${sepRight}%{r}${sepLeft} ${batteryStr}  "
+done

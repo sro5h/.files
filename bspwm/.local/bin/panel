@@ -1,0 +1,30 @@
+#! /bin/bash
+
+# Source the panel config
+. panel_config
+
+subscribe_info() {
+        while [ -e "${panelFifo}" ]; do
+                echo SYS
+                sleep 5
+        done
+}
+
+if xdo id -a "${panelName}" > /dev/null; then
+        printf "%s\n" "The panel is already running." >&2
+        exit 1
+fi
+
+
+# Kill all members of this process group on exiting
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+[ -e "${panelFifo}" ] && rm "${panelFifo}"
+mkfifo "${panelFifo}"
+
+bspc subscribe report > "${panelFifo}" &
+subscribe_info > "${panelFifo}" &
+
+panel_feeder < "${panelFifo}" | lemonbar -n "${panelName}" -g x${panelHeight} -f "${panelFont}" -B ${colorDefaultBg} -F ${colorDefaultFg} | sh &
+
+wait

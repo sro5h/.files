@@ -1,0 +1,16 @@
+#! /bin/bash
+
+panelName="bspwm_panel2"
+panelFifo="/tmp/panel_fifo"
+panelHeight=28
+panelFont="-*-fixed-bold-r-*-*-14-*-*-*-*-*-*-*"
+
+batteryPath="/sys/class/power_supply/BAT1/capacity"
+
+colorDefaultFg="#51556d"
+colorDefaultBg="#181a1e"
+colorFocusedFg="#aab7cd"
+colorFocusedBg="#181a1e"
+
+sepRight=">"
+sepLeft="<"
