@@ -1,0 +1,12 @@
+set font = -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+set geometry = 0x26
+set colors = #aab7cd #181a1e #aab7cd #181a1e #aab7cd #181a1e
+set border = 0px
+set autocomp = 1
+set run_hook = %s
+set list = true
+set margin = -256
+
+bang web = qutebrowser %s
+
+tab default = percontation "%s" %s | sort -u
