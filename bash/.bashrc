@@ -21,6 +21,7 @@ alias pmake='premake5'
 # Cd aliases
 alias cdr='cd ~/development/repositories'
 alias cdp='cd ~/development/projects'
+alias cdl='cd ~/development/libraries'
 
 # Git aliases
 alias gs='git status'
