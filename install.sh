@@ -21,10 +21,10 @@ exists () {
 }
 
 install () {
-        stow -v -t "${stowTarget}" "${1}"
+        stow --no-folding -v -t "${stowTarget}" "${1}"
 }
 uninstall () {
-        stow -v -t "${stowTarget}" -D "${1}"
+        stow --no-folding -v -t "${stowTarget}" -D "${1}"
 }
 
 # Check if stow is installed
