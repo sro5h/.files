@@ -1,0 +1,84 @@
+#
+# Program key bindings
+#
+
+# Terminal emulator
+super + Return
+        xst
+
+#
+# Bspwm key bindings
+#
+
+# Quit bspwm
+super + alt + q
+        bspc quit
+# Restart bspwm
+super + alt + r
+        bspc wm -r
+# Close and kill
+super + {_,shift + }w
+        bspc node -{c,k}
+# Alternate between tiled and monocle layout
+super + m
+        bspc desktop -l next
+
+#
+# State and flags key bindings
+#
+
+# Set window state
+super + {t,shift + t,s,f}
+        bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+# Set node flags
+super + ctrl + {m,x,y,z}
+        bspc node -g {marked,locked,sticky,private}
+
+#
+# Focus and swap key bindings
+#
+
+# Focus the node in the given direction
+super + {h,j,k,l}
+        bspc node -f {west,south,north,east}
+# Swap the node in the given direction
+super + shift + {h,j,k,l}
+        bspc node -s {west,south,north,east}
+# Focus the next/previous window on the current desktop
+super + {_,shift +}c
+        bspc node -f {next,prev}.local.!hidden.window
+# Focus the given desktop
+super + {1-5}
+        bspc desktop -f '^{1-5}'
+# Send to the given desktop
+super + shift + {1-5}
+        bspc node -d '^{1-5}'
+
+#
+# Preselect key bindings
+#
+
+# Preselect the direction
+super + ctrl + {h,j,k,l}
+        bspc node -p {west,south,north,east}
+# Preselect the ratio
+super + ctrl + {1-9}
+        bspc node -o 0.{1-9}
+
+# Cancel the preselection for the focused node
+super + ctrl + space
+        bspc node -p cancel
+
+#
+# Move and resize key bindings
+#
+
+# Expand a window by moving one of its sides outward
+super + alt + {h,j,k,l}
+        bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+# Contract a window by moving one of its sides inward
+super + alt + shift + {h,j,k,l}
+        bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+# Move a floating window
+super + {Left,Down,Up,Right}
+        bspc node -v {-20 0,0 20,0 -20,20 0}
