@@ -34,8 +34,8 @@ endfunction
 " Create plugin directory and download plugins
 if v:version >= 800 && !isdirectory(b:plugin_directory)
         call ClonePlugin('sro5h', 'vim-syntax')
-        call ClonePlugin('niklas-8', 'vim-darkspace')
         call ClonePlugin('dart-lang', 'dart-vim-plugin')
+        call ClonePlugin('cocopon', 'iceberg.vim')
 endif
 
 " General settings
@@ -63,8 +63,11 @@ let &t_8b="\<esc>[48;2;%lu;%lu;%lum"
 " Editing settings
 " ------------------------------------------------------------------------------
 
+" Set dark background
+set background=dark
+
 " Set color scheme
-colorscheme darkspace
+colorscheme iceberg
 
 " Show line numbers
 set number
