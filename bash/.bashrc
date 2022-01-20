@@ -26,6 +26,7 @@ alias cdl='cd ~/development/libraries'
 # Git aliases
 alias gs='git status'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias ga='git add'
 alias gc='git commit'
 alias gb='git branch'
