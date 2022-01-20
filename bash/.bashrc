@@ -36,6 +36,12 @@ alias gp='git push'
 alias gf='git fetch'
 alias gl='git log --graph --abbrev-commit'
 
+# Meson aliases
+alias mb='meson build'
+alias mc='meson compile -C build'
+alias mt='meson test -C build'
+alias mr='meson compile --clean -C build && meson compile -C build'
+
 # Common variables
 export PS1="\u \e[0;34m\w\e[0m\n$ "
 export EDITOR=vim
