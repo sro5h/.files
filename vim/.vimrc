@@ -106,7 +106,7 @@ nnoremap <silent> <cr> :nohlsearch<cr>
 augroup StartUp
         autocmd!
         " Don't insert comment leader on new lines
-        autocmd FileType * setlocal formatoptions-=co
+        autocmd FileType * setlocal formatoptions-=o
         " Indent 'private:' etc. correctly
         autocmd FileType cpp setlocal cinoptions+=g0l1N-s
         " Enable spell checking
