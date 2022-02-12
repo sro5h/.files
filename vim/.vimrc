@@ -34,8 +34,6 @@ endfunction
 " Create plugin directory and download plugins
 if v:version >= 800 && !isdirectory(b:plugin_directory)
         call ClonePlugin('sro5h', 'vim-syntax')
-        call ClonePlugin('dart-lang', 'dart-vim-plugin')
-        call ClonePlugin('cocopon', 'iceberg.vim')
 endif
 
 " General settings
