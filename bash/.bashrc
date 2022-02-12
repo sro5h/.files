@@ -14,9 +14,10 @@
 alias cl='clear'
 
 # Cd aliases
-alias cdr='cd ~/development/repositories'
-alias cdp='cd ~/development/projects'
-alias cdl='cd ~/development/libraries'
+alias cdd='cd /srv/dev'
+alias cdr='cd /srv/dev/repositories'
+alias cdp='cd /srv/dev/projects'
+alias cds='cd /srv/dev/software'
 
 # Git aliases
 alias gs='git status'
