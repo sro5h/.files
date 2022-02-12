@@ -50,37 +50,17 @@ set noshowmode
 " Always show the status line
 set laststatus=2
 
-" Fix escape not triggering immediately
-set ttimeoutlen=0
-
-" Enable true color support
-set termguicolors
-" Set vim-specific sequences for RGB colors
-let &t_8f="\<esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<esc>[48;2;%lu;%lu;%lum"
-
 " Editing settings
 " ------------------------------------------------------------------------------
 
 " Set dark background
 set background=dark
 
-" Set color scheme
-colorscheme iceberg
-
-" Show line numbers
-set number
-" Show the cursor line
-set cursorline
-
 " Indent 8 spaces wide
 set tabstop=8
 set shiftwidth=8
 " Use spaces instead of tabs
 set expandtab
-
-" Remove scrolling offset
-set scrolloff=0
 
 " Enable indentation on new lines
 set cindent
