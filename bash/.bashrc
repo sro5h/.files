@@ -10,10 +10,6 @@
 # License:
 #       MIT license
 
-# Enable colors
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-
 # Common aliases
 alias cl='clear'
 alias pmake='premake5'
