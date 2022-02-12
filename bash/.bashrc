@@ -39,6 +39,9 @@ alias mc='meson compile -C build'
 alias mt='meson test -C build'
 alias mr='meson compile --clean -C build && meson compile -C build'
 
+# Zig aliases
+alias zb='zig build'
+
 # Common variables
 export PS1="\u \e[0;34m\w\e[0m\n$ "
 export EDITOR=vim
