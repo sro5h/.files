@@ -73,6 +73,10 @@ set listchars=trail:~
 " Highlight search results
 set hlsearch
 
+" Plugin settings
+" ------------------------------------------------------------------------------
+let g:zig_fmt_autosave = 0
+
 " User defined mappings
 " ------------------------------------------------------------------------------
 
