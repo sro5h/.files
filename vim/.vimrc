@@ -94,4 +94,6 @@ augroup StartUp
         autocmd FileType cpp setlocal cinoptions+=g0l1N-s
         " Enable spell checking
         autocmd FileType gitcommit,markdown setlocal spell
+        " Smaller indentation
+        autocmd FileType tex setlocal tabstop=4 shiftwidth=4
 augroup END
