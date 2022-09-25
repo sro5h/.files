@@ -98,4 +98,5 @@ augroup StartUp
         autocmd FileType gitcommit,markdown setlocal spell
         " Smaller indentation
         autocmd FileType tex setlocal tabstop=4 shiftwidth=4
+        autocmd FileType lua setlocal tabstop=4 shiftwidth=4
 augroup END
