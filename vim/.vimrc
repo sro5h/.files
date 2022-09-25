@@ -86,6 +86,8 @@ nnoremap <silent> <cr> :nohlsearch<cr>
 " User defined autocommands
 " ------------------------------------------------------------------------------
 
+let c_no_curly_error=1
+
 augroup StartUp
         autocmd!
         " Don't insert comment leader on new lines
