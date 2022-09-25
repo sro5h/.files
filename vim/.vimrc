@@ -99,4 +99,6 @@ augroup StartUp
         " Smaller indentation
         autocmd FileType tex setlocal tabstop=4 shiftwidth=4
         autocmd FileType lua setlocal tabstop=4 shiftwidth=4
+        " Enable folding by markers
+        autocmd FileType lua setlocal foldmethod=marker foldlevel=99
 augroup END
