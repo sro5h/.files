@@ -58,5 +58,10 @@ if [ -d "${HOME}/.local/bin" ]; then
         PATH="${PATH}:${HOME}/.local/bin"
 fi
 
+# Rust
+if [ -d "${HOME}/.cargo/bin" ]; then
+        PATH="${PATH}:${HOME}/.cargo/bin"
+fi
+
 # Cpp include paths
 CPLUS_INCLUDE_PATH="${CPLUS_INCLUDE_PATH}:/usr/include"
