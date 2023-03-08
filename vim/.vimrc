@@ -33,6 +33,7 @@ endfunction
 
 " Create plugin directory and download plugins
 if v:version >= 800 && !isdirectory(b:plugin_directory)
+        call ClonePlugin('srstevenson', 'vim-picker')
         call ClonePlugin('sro5h', 'vim-syntax')
         call ClonePlugin('ziglang', 'zig.vim')
 endif
