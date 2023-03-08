@@ -56,9 +56,9 @@ set laststatus=2
 " Set dark background
 set background=dark
 
-" Indent 8 spaces wide
-set tabstop=8
-set shiftwidth=8
+" Indent 4 spaces wide
+set tabstop=4
+set shiftwidth=4
 " Use spaces instead of tabs
 set expandtab
 
