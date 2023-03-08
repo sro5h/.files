@@ -81,8 +81,16 @@ let g:zig_fmt_autosave = 0
 " User defined mappings
 " ------------------------------------------------------------------------------
 
+let g:mapleader = ' '
+let g:maplocalleader = ' '
+
 " Clear the search highlight
 nnoremap <silent> <cr> :nohlsearch<cr>
+
+" Open fuzzy finder
+nnoremap <silent> <leader>e <Plug>(PickerEdit)
+nnoremap <silent> <leader>s <Plug>(PickerSplit)
+nnoremap <silent> <leader>v <Plug>(PickerVsplit)
 
 " User defined autocommands
 " ------------------------------------------------------------------------------
