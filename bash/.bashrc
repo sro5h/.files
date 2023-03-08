@@ -39,6 +39,11 @@ alias mc="meson compile -C build"
 alias mt="meson test -C build"
 alias mr="meson compile --clean -C build && meson compile -C build"
 
+# Cargo aliases
+alias cb="cargo build"
+alias cr="cargo run"
+alias ct="cargo test"
+
 # Zig aliases
 alias zb="zig build"
 
