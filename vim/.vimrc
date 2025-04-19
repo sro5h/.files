@@ -123,6 +123,20 @@ set statusline+=%-9.(%l,%v%)
 " File percentage
 set statusline+=\ %P\ 
 
+" Tab line
+" ------------------------------------------------------------------------------
+
+" Always show the tab line
+set showtabline=2
+
+set tabline=
+" Current tabpage
+set tabline+=\ Tab\ %{tabpagenr()}\ of\ %{tabpagenr('$')}
+" Right align the rest
+set tabline+=%=
+" Current working directory
+set tabline+=\ %{getcwd()}\ 
+
 " Plugin settings
 " ------------------------------------------------------------------------------
 let g:zig_fmt_autosave = 0
