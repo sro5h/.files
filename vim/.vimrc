@@ -55,8 +55,6 @@ set noswapfile
 
 " Don't show the current mode
 set noshowmode
-" Always show the status line
-set laststatus=2
 " Show relative numbers
 set relativenumber
 " Show cursor line
@@ -93,6 +91,37 @@ set listchars=trail:~
 
 " Highlight search results
 set hlsearch
+
+" Status line
+" ------------------------------------------------------------------------------
+
+" Always show the status line
+set laststatus=2
+
+" Get syntax group of character under cursor
+function! SynGroup()
+    let l:s = synID(line('.'), col('.'), 1)
+    return l:s ? synIDattr(l:s, 'name') . '->' . synIDattr(synIDtrans(l:s),
+        \'name') : ''
+endfun
+
+function! RelFileName()
+    let l:s = expand('%:~:.')
+    return len(l:s) > 0 ? l:s : '[empty]'
+endfun
+
+set statusline=
+" Relative file name
+set statusline+=\ %{RelFileName()}
+" Buffer flags
+set statusline+=\ %y%r%m
+" Right align the rest
+set statusline+=%=
+set statusline+=%{SynGroup()}\ 
+" Line and column number with padding
+set statusline+=%-9.(%l,%v%)
+" File percentage
+set statusline+=\ %P\ 
 
 " Plugin settings
 " ------------------------------------------------------------------------------
