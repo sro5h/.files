@@ -22,13 +22,20 @@ let b:plugin_directory = $HOME . '/.vim/pack/sro5h/start/'
 
 " Clones a git repository into the plugin directory
 function! ClonePlugin(user, repository)
-        let s:github_url = 'https://github.com/' . a:user . '/' . a:repository
-        let s:directory  = b:plugin_directory . a:repository
-        let s:command    = 'git clone ' . s:github_url . ' ' . s:directory
+    let s:github_url = 'https://github.com/' . a:user . '/' . a:repository
+    let s:directory  = b:plugin_directory . a:repository
+    let s:command    = 'git clone ' . s:github_url . ' ' . s:directory
 
+    if !isdirectory(s:directory)
         echo('Cloning plugin ' . a:repository . ' into ' . s:directory)
         call system(s:command)
         echo('Done.')
+
+        let s:doc_dir = s:directory . '/doc/'
+        if isdirectory(s:doc_dir)
+            exe 'helptags' . s:doc_dir
+        endif
+    endif
 endfunction
 
 " Create plugin directory and download plugins
