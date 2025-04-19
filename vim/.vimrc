@@ -149,6 +149,22 @@ let g:fuzzyy_window_layout = {
 \}
 let g:fuzzyy_borderchars = ['━', '┃', '━', '┃', '┏', '┓', '┛', '┗']
 
+let g:vimtex_syntax_nospell_comments=1
+let g:vimtex_compiler_latexmk = {
+\   'aux_dir' : '',
+\   'out_dir' : 'build',
+\   'callback' : 1,
+\   'continuous' : 1,
+\   'executable' : 'latexmk',
+\   'hooks' : [],
+\   'options' : [
+\       '-verbose',
+\       '-file-line-error',
+\       '-synctex=1',
+\       '-interaction=nonstopmode',
+\   ],
+\}
+
 " User defined mappings
 " ------------------------------------------------------------------------------
 
@@ -160,6 +176,9 @@ nnoremap <silent> <cr> :nohlsearch<cr>
 
 " Open fuzzy finder
 nnoremap <silent> <leader>e :FuzzyFiles<cr>
+
+" Start vimtex compilation
+nnoremap <silent> <leader>c :VimtexCompile<cr>
 
 " User defined autocommands
 " ------------------------------------------------------------------------------
