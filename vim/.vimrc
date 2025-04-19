@@ -202,3 +202,9 @@ augroup StartUp
     " Enable folding by markers
     autocmd FileType lua setlocal foldmethod=marker foldlevel=99
 augroup END
+
+augroup CursorLine
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
+augroup END
