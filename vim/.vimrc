@@ -39,10 +39,10 @@ function! ClonePlugin(user, repository)
 endfunction
 
 " Create plugin directory and download plugins
-if v:version >= 800 && !isdirectory(b:plugin_directory)
-        call ClonePlugin('srstevenson', 'vim-picker')
-        call ClonePlugin('sro5h', 'vim-syntax')
-        call ClonePlugin('ziglang', 'zig.vim')
+if v:version >= 800
+    call ClonePlugin('donaldttt', 'fuzzyy')
+    call ClonePlugin('sro5h', 'vim-syntax')
+    call ClonePlugin('lervag', 'vimtex')
 endif
 
 " General settings
@@ -105,16 +105,16 @@ nnoremap <silent> <leader>v <Plug>(PickerVsplit)
 let c_no_curly_error=1
 
 augroup StartUp
-        autocmd!
-        " Don't insert comment leader on new lines
-        autocmd FileType * setlocal formatoptions-=o
-        " Indent 'private:' etc. correctly
-        autocmd FileType cpp setlocal cinoptions+=g0l1N-s
-        " Enable spell checking
-        autocmd FileType gitcommit,markdown setlocal spell
-        " Smaller indentation
-        autocmd FileType tex setlocal tabstop=4 shiftwidth=4
-        autocmd FileType lua setlocal tabstop=4 shiftwidth=4
-        " Enable folding by markers
-        autocmd FileType lua setlocal foldmethod=marker foldlevel=99
+    autocmd!
+    " Don't insert comment leader on new lines
+    autocmd FileType * setlocal formatoptions-=o
+    " Indent 'private:' etc. correctly
+    autocmd FileType cpp setlocal cinoptions+=g0l1N-s
+    " Enable spell checking
+    autocmd FileType gitcommit,markdown setlocal spell
+    " Smaller indentation
+    autocmd FileType tex setlocal tabstop=2 shiftwidth=2 spell spelllang=en_gb spellfile=spell/en.utf-8.add
+    autocmd FileType lua setlocal tabstop=4 shiftwidth=4
+    " Enable folding by markers
+    autocmd FileType lua setlocal foldmethod=marker foldlevel=99
 augroup END
