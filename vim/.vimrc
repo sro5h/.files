@@ -57,6 +57,19 @@ set noswapfile
 set noshowmode
 " Always show the status line
 set laststatus=2
+" Show relative numbers
+set relativenumber
+" Show cursor line
+set cursorline
+
+" Enable UTF-8 encoding
+set encoding=utf-8
+
+" Remove pipe characters from buffer separators
+set fillchars+=vert:\ 
+
+" Specify what to store in session files
+set sessionoptions=blank,buffers,tabpages,sesdir
 
 " Editing settings
 " ------------------------------------------------------------------------------
