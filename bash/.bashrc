@@ -51,12 +51,11 @@ alias zb="zig build"
 export EDITOR=vim
 
 # Prompt
-user="\[\e[0;95m\]\u\[\e[0m\]"
-at="\[\e[0;96m\]@\[\e[0m\]"
-host="\[\e[0;94m\]\h\[\e[0m\]"
+host="\[\e[0;95m\]\h\[\e[0m\]"
+in="\[\e[0;94m\]in\[\e[0m\]"
 directory="\[\e[0;96m\]\W\[\e[0m\]"
-sign="\[\e[0;96m\]\$\[\e[0m\]"
-export PS1="$user$at$host $directory $sign "
+sign="\[\e[0;94m\]\$\[\e[0m\]"
+export PS1="$host $in $directory $sign "
 
 # Custom binaries
 if [ -d "${HOME}/.local/bin" ]; then
