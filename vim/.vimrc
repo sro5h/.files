@@ -174,6 +174,9 @@ let g:maplocalleader = ' '
 " Clear the search highlight
 nnoremap <silent> <cr> :nohlsearch<cr>
 
+" Edit vimrc
+nnoremap <silent> <leader>v :e $MYVIMRC<cr>
+
 " Open fuzzy finder
 nnoremap <silent> <leader>e :FuzzyFiles<cr>
 
