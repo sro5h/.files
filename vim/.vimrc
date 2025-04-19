@@ -139,7 +139,15 @@ set tabline+=\ %{getcwd()}\
 
 " Plugin settings
 " ------------------------------------------------------------------------------
-let g:zig_fmt_autosave = 0
+
+let g:fuzzyy_window_layout = {
+\   'files': {
+\       'preview': 0,
+\       'width': 0.5,
+\       'height': 0.5,
+\   }
+\}
+let g:fuzzyy_borderchars = ['━', '┃', '━', '┃', '┏', '┓', '┛', '┗']
 
 " User defined mappings
 " ------------------------------------------------------------------------------
@@ -151,9 +159,7 @@ let g:maplocalleader = ' '
 nnoremap <silent> <cr> :nohlsearch<cr>
 
 " Open fuzzy finder
-nnoremap <silent> <leader>e <Plug>(PickerEdit)
-nnoremap <silent> <leader>s <Plug>(PickerSplit)
-nnoremap <silent> <leader>v <Plug>(PickerVsplit)
+nnoremap <silent> <leader>e :FuzzyFiles<cr>
 
 " User defined autocommands
 " ------------------------------------------------------------------------------
