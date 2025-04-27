@@ -159,10 +159,10 @@ set showtabline=2
 def g:TabLineStr(): string
     # Show tab list
     var str = 'Tabs:'
-    var cur_page = 1
-    while cur_page <= tabpagenr('$')
-        str = str .. (tabpagenr() == cur_page ? ' %#TabLineSel#*%#TabLine#' : ' *')
-        cur_page += 1
+    var page = 1
+    while page <= tabpagenr('$')
+        str = str .. (tabpagenr() == page ? ' %#TabLineSel#*%#TabLine#' : ' *')
+        page += 1
     endwhile
 
     # Right align cwd
