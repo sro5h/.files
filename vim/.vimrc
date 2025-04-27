@@ -1,206 +1,256 @@
-"
-" .vimrc
-"
-" Author:
-"       Paul Meffle
-"
-" Summary:
-"       My personal vim configuration
-"
-" License:
-"       MIT license
+vim9script
 
-" Plugin setup, depends on the plugin manager introduced in vim 8
-" ------------------------------------------------------------------------------
-
-" Turn on filetype and syntax support
+# Turn on filetype and syntax support
 filetype plugin indent on
 syntax on
 
-" The plugin directory
-let b:plugin_directory = $HOME . '/.vim/pack/sro5h/start/'
+# Plugin setup {{{
+# ---------------------------------------------------------------------------
 
-" Clones a git repository into the plugin directory
-function! ClonePlugin(user, repository)
-    let s:github_url = 'https://github.com/' . a:user . '/' . a:repository
-    let s:directory  = b:plugin_directory . a:repository
-    let s:command    = 'git clone ' . s:github_url . ' ' . s:directory
+var plugin_dir = $HOME .. '/.vim/pack/sro5h/start/'
 
-    if !isdirectory(s:directory)
-        echo('Cloning plugin ' . a:repository . ' into ' . s:directory)
-        call system(s:command)
-        echo('Done.')
+# Clone a git repository into `plugin_dir`
+def ClonePlugin(repository: string, user: string)
+    var github_url = 'https://github.com/' .. user .. '/' .. repository
+    var dir = plugin_dir .. repository
+    var command = 'git clone ' .. github_url .. ' ' .. dir
 
-        let s:doc_dir = s:directory . '/doc/'
-        if isdirectory(s:doc_dir)
-            exe 'helptags' . s:doc_dir
+    if !isdirectory(dir)
+        echo 'Cloning plugin ' .. repository .. ' into ' .. dir
+        system(command)
+        echo 'Done.'
+
+        var doc_dir = dir .. '/doc'
+
+        if isdirectory(doc_dir)
+            execute 'helptags ' .. doc_dir
         endif
     endif
-endfunction
+enddef
 
-" Create plugin directory and download plugins
-if v:version >= 800
-    call ClonePlugin('donaldttt', 'fuzzyy')
-    call ClonePlugin('sro5h', 'vim-syntax')
-    call ClonePlugin('lervag', 'vimtex')
-endif
+# Download plugins
+ClonePlugin('fuzzyy', 'donaldttt')
+ClonePlugin('vim-syntax', 'sro5h')
+ClonePlugin('vimtex', 'lervag')
 
-" General settings
-" ------------------------------------------------------------------------------
+# }}}
 
-" Disable creation of backup files
-set nobackup
-" Disable creation of swap files
-set noswapfile
+# General settings {{{
+# ------------------------------------------------------------------------------
 
-" Don't show the current mode
-set noshowmode
-" Show relative numbers
-set relativenumber
-" Show cursor line
-set cursorline
-
-" Enable UTF-8 encoding
+# Enable UTF-8 encoding
 set encoding=utf-8
 
-" Remove pipe characters from buffer separators
-set fillchars+=vert:\ 
+# Disable creation of backup files
+set nobackup
+# Disable creation of swap files
+set noswapfile
 
-" Specify what to store in session files
+# Specify what to store in session files
 set sessionoptions=blank,buffers,tabpages,sesdir
 
-" Editing settings
-" ------------------------------------------------------------------------------
+# Disable intro message
+set shortmess+=I
 
-" Set dark background
-set background=dark
+# Fix redrawing while playing back commands
+set lazyredraw
 
-" Indent 4 spaces wide
+# }}}
+
+# Editing settings {{{
+# ------------------------------------------------------------------------------
+
+# Use spaces instead of tabs
+set expandtab
+# Indent 4 spaces wide
 set tabstop=4
 set shiftwidth=4
-" Use spaces instead of tabs
-set expandtab
 
-" Enable indentation on new lines
+# Enable indentation on new lines
 set cindent
 
-" Enable list chars
+# Enable folding by markers
+set foldmethod=marker
+set foldlevel=99
+
+# }}}
+
+# Visual settings {{{
+# ------------------------------------------------------------------------------
+
+# Set dark background
+set background=dark
+# Set color scheme
+colorscheme custom
+
+# Don't show current mode
+set noshowmode
+# Show relative numbers
+set relativenumber
+# Show cursor line
+set cursorline
+
+# Keep cursor line centered
+set scrolloff=999
+
+# Don't highlight search results
+set nohlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+# Remove pipe characters from buffer separators
+set fillchars+=vert:\ 
+
+# Enable list chars
 set list
-" Show trailing spaces
+# Show trailing spaces
 set listchars=trail:~
 
-" Highlight search results
-set hlsearch
+# Use popup for wildmenu
+set wildoptions+=pum
 
-" Status line
-" ------------------------------------------------------------------------------
+# }}}
 
-" Always show the status line
+# Status line {{{
+# ------------------------------------------------------------------------------
+
+# Always show status line
 set laststatus=2
 
-" Get syntax group of character under cursor
-function! SynGroup()
-    let l:s = synID(line('.'), col('.'), 1)
-    return l:s ? synIDattr(l:s, 'name') . '->' . synIDattr(synIDtrans(l:s),
-        \'name') : ''
-endfun
+# Get syntax group of character under cursor
+def g:SynGroup(): string
+    var s = synID(line('.'), col('.'), 1)
 
-function! RelFileName()
-    let l:s = expand('%:~:.')
-    return len(l:s) > 0 ? l:s : '[empty]'
-endfun
+    if s != 0
+        return synIDattr(s, 'name') .. '->' .. synIDattr(synIDtrans(s), 'name')
+    else
+        return ''
+    endif
+enddef
+
+def g:RelFileName(): string
+    var path = expand('%:~:.')
+    return len(path) > 0 ? path : '[empty]'
+enddef
 
 set statusline=
-" Relative file name
+# Relative file name
 set statusline+=\ %{RelFileName()}
-" Buffer flags
+# Buffer flags
 set statusline+=\ %y%r%m
-" Right align the rest
+# Right align rest
 set statusline+=%=
+# Current syntax group
 set statusline+=%{SynGroup()}\ 
-" Line and column number with padding
+# Line and column number with padding
 set statusline+=%-9.(%l,%v%)
-" File percentage
+# File percentage
 set statusline+=\ %P\ 
 
-" Tab line
-" ------------------------------------------------------------------------------
+# }}}
 
-" Always show the tab line
+# Tab line {{{
+# ------------------------------------------------------------------------------
+
+# Always show the tab line
 set showtabline=2
 
-set tabline=
-" Current tabpage
-set tabline+=\ Tab\ %{tabpagenr()}\ of\ %{tabpagenr('$')}
-" Right align the rest
-set tabline+=%=
-" Current working directory
-set tabline+=\ %{getcwd()}\ 
+def g:TabLineStr(): string
+    # Show tab list
+    var str = 'Tabs:'
+    var cur_page = 1
+    while cur_page <= tabpagenr('$')
+        str = str .. (tabpagenr() == cur_page ? ' %#TabLineSel#*%#TabLine#' : ' *')
+        cur_page += 1
+    endwhile
 
-" Plugin settings
-" ------------------------------------------------------------------------------
+    # Right align cwd
+    str = str .. '%= %{getcwd()} '
 
-let g:fuzzyy_window_layout = {
-\   'files': {
-\       'preview': 0,
-\       'width': 0.5,
-\       'height': 0.5,
-\   }
-\}
-let g:fuzzyy_borderchars = ['━', '┃', '━', '┃', '┏', '┓', '┛', '┗']
+    return str
+enddef
 
-let g:vimtex_syntax_nospell_comments=1
-let g:vimtex_compiler_latexmk = {
-\   'aux_dir' : '',
-\   'out_dir' : 'build',
-\   'callback' : 1,
-\   'continuous' : 1,
-\   'executable' : 'latexmk',
-\   'hooks' : [],
-\   'options' : [
-\       '-verbose',
-\       '-file-line-error',
-\       '-synctex=1',
-\       '-interaction=nonstopmode',
-\   ],
-\}
+set tabline=%{%TabLineStr()%}
 
-" User defined mappings
-" ------------------------------------------------------------------------------
+# }}}
 
-let g:mapleader = ' '
-let g:maplocalleader = ' '
+# Plugin settings {{{
+# ------------------------------------------------------------------------------
 
-" Clear the search highlight
+g:c_no_curly_error = 1
+
+g:netrw_altfile = 1
+g:netrw_banner = 0
+
+g:fuzzyy_dropdown = 1
+g:fuzzyy_window_layout = {
+    'files': {
+        'preview': 0,
+        'width': 0.5,
+        'height': 8,
+    },
+}
+g:fuzzyy_borderchars = ['━', '┃', '━', '┃', '┏', '┓', '┛', '┗']
+
+g:vimtex_syntax_nospell_comments = 1
+g:vimtex_compiler_latexmk = {'out_dir': 'build'}
+
+# }}}
+
+# Custom mappings {{{
+# ------------------------------------------------------------------------------
+
+# Custom sneak
+nnoremap s /\M
+nnoremap S ?\V
+
+# Clear the search highlight
 nnoremap <silent> <cr> :nohlsearch<cr>
 
-" Edit vimrc
+# Window navigation
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-k> <c-w>k
+nnoremap <c-j> <c-w>j
+
+# TODO: Change leader to `;` and use `<space>` to alternate folds
+
+# Open netrw
+nnoremap <silent> - :Explore<cr>
+
+g:mapleader = ' '
+g:maplocalleader = ' '
+
+# Move to beginning of previous fold
+nnoremap <leader>j zj
+nnoremap <leader>k zk[z
+
+# Edit vimrc
 nnoremap <silent> <leader>v :e $MYVIMRC<cr>
 
-" Open fuzzy finder
+# Open fuzzy finder
 nnoremap <silent> <leader>e :FuzzyFiles<cr>
+nnoremap <silent> <leader>b :FuzzyBuffers<cr>
 
-" Start vimtex compilation
+# Start vimtex compilation
 nnoremap <silent> <leader>c :VimtexCompile<cr>
 
-" User defined autocommands
-" ------------------------------------------------------------------------------
+# }}}
 
-let c_no_curly_error=1
+# Custom autocommands {{{
+# ------------------------------------------------------------------------------
 
 augroup StartUp
     autocmd!
-    " Don't insert comment leader on new lines
+    # Don't insert comment leader on new lines
     autocmd FileType * setlocal formatoptions-=o
-    " Indent 'private:' etc. correctly
+    # Indent 'private:' etc. correctly
     autocmd FileType cpp setlocal cinoptions+=g0l1N-s
-    " Enable spell checking
+    # Enable spell checking
     autocmd FileType gitcommit,markdown setlocal spell
-    " Smaller indentation
+    # Smaller indentation
     autocmd FileType tex setlocal tabstop=2 shiftwidth=2 spell spelllang=en_gb spellfile=spell/en.utf-8.add
-    autocmd FileType lua setlocal tabstop=4 shiftwidth=4
-    " Enable folding by markers
-    autocmd FileType lua setlocal foldmethod=marker foldlevel=99
 augroup END
 
 augroup CursorLine
@@ -208,3 +258,5 @@ augroup CursorLine
     autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     autocmd WinLeave * setlocal nocursorline
 augroup END
+
+# }}}
